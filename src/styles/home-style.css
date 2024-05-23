@@ -1,0 +1,126 @@
+/**
+ * welcome-content
+ */
+
+.welcome-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-description .title {
+  margin-block: 1rem;
+  font-size: 32px;
+}
+
+.content-description p {
+  line-height: 1.7rem;
+}
+
+.content-description button {
+  padding: 0.8rem 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  margin-block-start: 1rem;
+  background-color: #008080;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+}
+
+.content-description button:hover {
+  color: #008080;
+  background-color: white;
+  border-color: #008080;
+}
+
+/**
+ * cigarette-content
+ */
+
+#cigarette {
+  background-color: #008080;
+}
+
+.cigarette-content {
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cigarette-content h1 {
+  margin-bottom: 2rem;
+  font-size: 32px;
+}
+
+.cigarette-content .content-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cigarette-content .card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+.cigarette-content .card-container .card {
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cigarette-content .card-container .card img {
+  width: 100%;
+  height: auto;
+}
+
+.cigarette-content .card-container .card .container {
+  padding: 16px;
+}
+
+.cigarette-content .card-container .container h3 {
+  margin: 0;
+}
+
+/**
+ * smoking-disease
+ */
+
+.smoking-disease {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/**
+ * benefits-content
+ */
+
+#benefits {
+  background-color: #008080;
+}
+
+.benefits-content {
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/**
+ * comments-container
+ */
+
+.comments-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
