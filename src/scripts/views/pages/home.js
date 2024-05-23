@@ -12,7 +12,7 @@ const Home = {
             <button>Baca Selengkapnya</button>
           </div>
           <div class="content-image">
-            <img src="./src/public/images/1.png" alt="Dicoding Indonesia" />
+            <img src="./images/1.png" alt="Dicoding Indonesia" />
           </div>
         </article>
     </section>`;
