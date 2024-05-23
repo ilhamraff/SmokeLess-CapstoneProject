@@ -1,0 +1,103 @@
+.survey-description {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-one, .content-two {
+    text-align: center;
+    width: 100%;
+    margin-top: 10%;
+}
+
+#p1{
+	text-align: center;
+	font-size: 20px;
+    max-width: 70ch;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    color: black;
+}
+
+button {
+    background-color: #008080;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    margin-top: 50px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #3e8e41;
+}
+
+/* Form Section */
+
+#formPerokok form {
+    text-align: justify;
+}
+
+#formPerokok form p {
+    text-align: left;
+}
+
+#formPerokok form button {
+    text-align: center;
+}
+
+
+.form-section {
+    display: none;
+    text-align: center;
+    margin: 20px;
+    padding: 100px;
+    
+}
+
+.form-section form {
+    display: inline-block;
+    text-align: center;
+    width: 55%;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    background-color: #ff4b5c;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute; /* Position the button absolutely */
+    top: 80%; /* Adjust the position from the top */
+    right: 28%; /* Adjust the position from the right */
+}
+
+.close-button:hover {
+    transform: scale(1.05);
+}
+
+.close-button:active {
+    background-color: #ff1c2e;
+}
