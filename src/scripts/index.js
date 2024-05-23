@@ -2,6 +2,7 @@ import "regenerator-runtime";
 import "../styles/style.css";
 import "../styles/responsive.css";
 import "../styles/home-style.css";
+import "../styles/about-style.css"
 import App from "./views/app";
 
 const app = new App({

@@ -1,0 +1,98 @@
+.about-us {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px;
+    text-align: center;
+}
+
+.about-us .gambar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us h2 {
+    padding: 10px;
+}
+
+#content {
+    background-color: #008080;
+}
+
+.about-website {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 55px;
+    text-align: center;
+}
+
+.about-website h1 {
+    color: white;
+    font-size: 28px;
+    padding: 20px;
+}
+
+.about-website p {
+    text-align: center;
+    padding: 40px;
+    color: white;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.about-dev {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 55px;
+    text-align: center;
+}
+
+.about-dev h1 {
+    font-size: 28px;
+    padding: 20px;
+}
+
+.about-dev p {
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.about-dev .dev-container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.about-dev .card-dev {
+    background: #008080;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.about-dev .card-dev:hover {
+    transform: translateY(-10px);
+}
+
+.about-dev .dev-picture {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-dev .dev-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.about-dev .dev-title {
+    color: white;
+    font-size: 18px;
+}
