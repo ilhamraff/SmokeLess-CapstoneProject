@@ -1,0 +1,18 @@
+.about-us {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px;
+  text-align: center;
+}
+
+.about-us h1 {
+  font-size: 28px;
+  padding: 20px;
+}
+
+.about-us p {
+  text-align: center;
+  padding: 40px;
+  font-size: 20px;
+  line-height: 1.5;
+}
