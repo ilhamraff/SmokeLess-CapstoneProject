@@ -2,6 +2,9 @@
   .menu li {
     margin-right: 5px;
   }
+  .survey-description .content-one{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -28,6 +31,36 @@
     display: flex;
     flex-direction: column;
   }
+  .form-section form {
+      width: 100%;
+      max-width: 400px;
+      min-width: 300px;
+  }
+  /* Footer responsive styles for 768px */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-left, .footer-center, .footer-right {
+    min-width: 100%;
+    text-align: center;
+  }
+  .footer-left img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links li {
+    margin: 10px 0;
+  }
+  .footer-icons {
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -40,6 +73,31 @@
   .menu.aktif {
     top: 54px;
   }
+  .form-section form {
+      width: 100%;
+      max-width: 270px;
+      min-width: 200px;
+  }
+  /* Footer responsive styles */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-left, .footer-center, .footer-right {
+    min-width: 100%;
+    text-align: center;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links li {
+    margin: 10px 0;
+  }
+  .footer-icons {
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -48,5 +106,17 @@
   }
   .tombol {
     font-size: 12pt;
+  }
+  .form-section form {
+      width: 100%;
+      max-width: 220px;
+      min-width: 200px;
+  }
+  /* Footer responsive styles for small screens */
+  .footer-links li {
+    margin: 5px 0;
+  }
+  .footer-icons i {
+    font-size: 20px;
   }
 }
