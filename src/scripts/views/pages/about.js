@@ -1,9 +1,10 @@
 const About = {
     async render() {
       return `
+      <main class="Utama">
         <section class="about-us">
             <div class="gambar">
-                <img src="./img/Logo.png" alt="">
+                <img src="./public/images/Logo.png" alt="Logo SmokeLess">
             </div>
             <p>Website informasi layanan berhenti merokok</p>
             <h2>"Perubahan Dimulai Dari <strong><i>Dirimu Sendiri</i></strong>"</h2>
@@ -39,24 +40,48 @@ const About = {
             <div class="dev-container">
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="./img/potoAldova.png" alt="Foto Aldova Ferdiansyah" />
+                        <img src="./public/images/potoAldova.png" alt="Foto Aldova Ferdiansyah" />
                     </div>
                     <h3 class="dev-title">Aldova Ferdiansyah</h3>
+                    <div class="icon-picture">
+                        <a href="https://www.instagram.com/aldovaaa__?igsh=MTRsc2hoaDJnY3FpbA=="><img
+                                src="./public/images/instagramLogo.png" alt="Logo Instagram"></a>
+                        <a href="https://github.com/aldovaferdiansyah"><img src="./public/images/githubLogo.png"
+                                alt="Logo Github"></a>
+                        <a href="https://www.linkedin.com/in/aldova-ferdiansyah-94b393220/"><img
+                                src="./public/images/linkedinLogo.png" alt="Logo linkedin"></a>
+                    </div>
                 </div>
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="./img/potoHarfin.png" alt="Foto Harfin Aqbil Falah " />
+                        <img src="./public/images/potoHarfin.png" alt="Foto Harfin Aqbil Falah " />
                     </div>
                     <h3 class="dev-title">Harfin Aqbil Falah</h3>
+                    <div class="icon-picture">
+                        <a href="https://www.instagram.com/harfinnnn_afff?igsh=c25rNHJqYWV0emkw"><img
+                                src="./public/images/instagramLogo.png" alt="Logo Instagram"></a>
+                        <a href="https://github.com/Harfinnn"><img src="./public/images/githubLogo.png" alt="Logo Github"></a>
+                        <a href="https://www.linkedin.com/in/harfin-aqbil-falah-701502220/"><img
+                                src="./public/images/linkedinLogo.png" alt="Logo linkedin"></a>
+                    </div>
                 </div>
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="./img/potoIlham.png" alt="Foto Ilham Rafi Fadhilah" />
+                        <img src="./public/images/potoIlham.png" alt="Foto Ilham Rafi Fadhilah" />
                     </div>
                     <h3 class="dev-title">Ilham Rafi Fadhilah</h3>
+                    <div class="icon-picture">
+                        <a href="https://www.instagram.com/ilhamraff_/"><img src="./public/images/instagramLogo.png"
+                                alt="Logo Instagram"></a>
+                        <a href="https://github.com/ilhamraff"><img src="./public/images/githubLogo.png" alt="Logo Github"></a>
+                        <a href="https://www.linkedin.com/in/ilham-rafi-fadhilah-850469188/"><img
+                                src="./public/images/linkedinLogo.png" alt="Logo linkedin"></a>
+                    </div>
                 </div>
             </div>
-        </section>`;
+        </section>
+    </main>
+        `;
     },
   
     async afterRender() {},
