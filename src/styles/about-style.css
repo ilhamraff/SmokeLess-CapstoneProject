@@ -11,8 +11,13 @@
     justify-content: center;
 }
 
+.about-us .gambar img {
+    width: 400px;
+    height: 250px;
+}
+
 .about-us h2 {
-    padding: 10px;
+    padding: 5px;
 }
 
 #content {
@@ -29,12 +34,12 @@
 .about-website h1 {
     color: white;
     font-size: 28px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .about-website p {
     text-align: center;
-    padding: 40px;
+    padding: 25px;
     color: white;
     font-size: 20px;
     line-height: 1.5;
@@ -43,33 +48,33 @@
 .about-dev {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 55px;
+    padding: 40px;
     text-align: center;
 }
 
 .about-dev h1 {
     font-size: 28px;
-    padding: 20px;
+    padding: 5px;
 }
 
 .about-dev p {
     text-align: center;
-    padding: 40px;
-    font-size: 20px;
+    padding: 20px;
+    font-size: 18px;
     line-height: 1.5;
 }
 
 .about-dev .dev-container {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .about-dev .card-dev {
     background: #008080;
-    padding: 30px;
+    padding: 25px;
     border-radius: 20px;
     text-align: center;
     color: white;
@@ -95,4 +100,24 @@
 .about-dev .dev-title {
     color: white;
     font-size: 18px;
+}
+
+.about-dev .dev-container .icon-picture {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.dev-container .icon-picture img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.dev-container .icon-picture img:hover {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
 }
