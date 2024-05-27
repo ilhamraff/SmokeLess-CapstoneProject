@@ -4,10 +4,10 @@ class ArticleSource {
   static async getArticle() {
     try {
       const response = await fetch(API_ENDPOINT.GET_ARTICLE);
-      const responseJson = await response.json();
-      return responseJson.results;
+      const data = await response.json();
+      return data;
     } catch (error) {
-      console.error(error);
+      console.error("Error fetching data:", error);
     }
   }
 }
