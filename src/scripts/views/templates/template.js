@@ -1,18 +1,24 @@
 const createArticleCard = (article) => {
+  const truncatedContent =
+    article.content.length > 100
+      ? article.content.substring(0, 100) + "..."
+      : article.content;
   return `
   <div class="article-item">
     <h2>${article.title}</h2>
-    <p><strong>Author:</strong> ${article.author}</p>
-    <p>${article.content}</p>
+    <p>${truncatedContent}</p>
+    <a href="#">Baca Selengkapnya
+      <i class="fa fa-long-arrow-right"></i>
+    </a>
   </div>`;
 };
 
 const createCommentItem = (comment) => {
   return `
   <div class="comment-item">
-    <h4>${comment.username}</h4>
-    <p>${comment.body}</p>
-    <p>21/05/2024, 10:02:55 AM</p>
+    <h4>${comment.name}</h4>
+    <p>${comment.comment}</p>
+    <p>${comment.date}</p>
   </div>`;
 };
 

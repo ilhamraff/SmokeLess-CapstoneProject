@@ -121,6 +121,45 @@
  */
 
 .comments-container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
+}
+
+.comments-container .commentbox {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.comments-container .commentbox img,
+.comment-list img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 2rem;
+}
+
+.form-content {
+  flex-grow: 1;
+}
+
+.comment-form input,
+textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.comment-form button {
+  background-color: #008080;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.comment-list {
+  display: flex;
 }
