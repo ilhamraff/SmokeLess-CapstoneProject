@@ -1,6 +1,6 @@
 import ArticleSource from "../../data/article-source";
 import CommentSource from "../../data/comment-source";
-import { createCommentItem } from "../templates/template";
+import { createCommentItem, createCommentSection } from "../templates/template";
 
 const Home = {
   async render() {
@@ -20,47 +20,57 @@ const Home = {
           </div>
         </article>
     </section>
-    <section class="content" id="comment">
-        <article class="comments-container hidden">
-          <h1>Post A Comment</h1>
-          <div class="commentbox">
-            <img src="/image/user.png" alt="" />
-            <div class="form-content">
-              <h2>Comment As:</h2>
-              <form action="" class="comment-form">
-                <input
-                  type="text"
-                  placeholder="Enter Your Name ..."
-                  class="user"
-                /><br />
-                <textarea
-                  type="text"
-                  placeholder="Enter Your Comment ..."
-                  class="usercomment"
-                ></textarea>
-                <button type="submit" disabled id="publish">Publish</button>
-              </form>
+
+    <section class="content" id="cigarette">
+        <article class="cigarette-content hidden">
+          <h1>Apa saja sih Kandungan Rokok itu ?</h1>
+          <div class="content-box">
+            <div>
+              <img src="image/Group 17.png" alt="" />
             </div>
-          </div>
-          <div class="comment-list">
-            <img src="/image/user.png" alt="" />
-            <div class="comments-detail" id="comment-list"></div>
+            <div class="card-container"></div>
           </div>
         </article>
-      </section>`;
+    </section>
+
+    <section class="content" id="disease">
+      <article class="smoking-disease hidden">
+        <h1>Sederet Masalah Kesehatan Yang Ditimbulkan</h1>
+      </article>
+    </section>
+
+    <section class="content" id="benefits">
+        <article class="benefits-content hidden">
+          <div class="benefits-title">
+            <h1>Mengapa Harus Berhenti Merokok ?</h1>
+          </div>
+          <div class="benefits-container"></div>
+          <div class="benefit-conclusion">
+            <h3>Apakah Anda Masih Ingin Merokok?</h3>
+            <p>
+              Berhenti dari Sekarang dan Rasakan Manfaatnya!<br />
+              Ambil kendali atas kesehatan dan masa depan Anda
+            </p>
+          </div>
+        </article>
+    </section>
+
+    <section class="content" id="comment"></section>`;
   },
 
   async afterRender() {
     try {
+      const commentSection = document.querySelector("#comment");
+      commentSection.innerHTML = createCommentSection();
+
       const comments = await CommentSource.getComment();
       const commentsArray = Object.values(comments);
       const commentsContainer = document.querySelector("#comment-list");
-
       commentsArray.forEach((comment) => {
         commentsContainer.innerHTML += createCommentItem(comment);
       });
     } catch (error) {
-      console.error("Error rendering comment:", error);
+      console.error("Error rendering: ", error);
     }
   },
 };

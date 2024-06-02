@@ -54,12 +54,16 @@
 
 .cigarette-content h1 {
   margin-bottom: 2rem;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .cigarette-content .content-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.cigarette-content .content-box img {
+  max-width: 400px;
 }
 
 .cigarette-content .card-container {
@@ -70,12 +74,19 @@
 }
 
 .cigarette-content .card-container .card {
-  background-color: white;
-  color: black;
+  background-color: #008080;
+  color: white;
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
+  font-size: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100px;
+}
+
+.cigarette-content .card-container .card:hover {
+  transform: translateY(-10px);
 }
 
 .cigarette-content .card-container .card img {
@@ -101,6 +112,33 @@
   text-align: center;
 }
 
+.smoking-disease h1 {
+  font-size: 28px;
+}
+
+.smoking-disease .disease-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.smoking-disease .disease-container:hover {
+  transform: translateY(-10px);
+}
+
+.smoking-disease .disease-container .disease-title {
+  background-color: #008080;
+  color: white;
+  border-radius: 20px;
+}
+
+.smoking-disease .disease-container .disease-body {
+  text-align: left;
+  padding-left: 20px;
+}
+
 /**
  * benefits-content
  */
@@ -114,6 +152,40 @@
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+}
+
+.benefits-content .benefits-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.benefits-content .benefits-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.benefits-content .card-benefit {
+  background: white;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  text-align: center;
+  color: #008080;
+  transition: all 0.3s ease;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.benefits-content .card-benefit:hover {
+  transform: translateY(-10px);
+}
+
+.benefit-conclusion {
+  margin-top: 40px;
 }
 
 /**
