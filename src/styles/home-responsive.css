@@ -1,0 +1,39 @@
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    box-sizing: border-box;
+  }
+  .welcome-content {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .welcome-content .content-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+  }
+
+  .cigarette-content .content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .smoking-disease .disease-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 320px) {
+}

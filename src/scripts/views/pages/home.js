@@ -1,6 +1,7 @@
 import ArticleSource from "../../data/article-source";
 import CommentSource from "../../data/comment-source";
 import HomeSource from "../../data/home-source";
+import AddComment from "../../utils/comment-handler";
 import {
   crateCigaretteContentCard,
   createBenefitsCard,
@@ -67,9 +68,6 @@ const Home = {
 
   async afterRender() {
     try {
-      const commentSection = document.querySelector("#comment");
-      commentSection.innerHTML = createCommentSection();
-
       const contents = await HomeSource.getContent();
       const contentSection = document.querySelector(".card-container");
       contents.forEach((content) => {
@@ -88,11 +86,49 @@ const Home = {
         benefitsSection.innerHTML += createBenefitsCard(benefit);
       });
 
-      const comments = await CommentSource.getComment();
-      const commentsArray = Object.values(comments);
-      const commentsContainer = document.querySelector("#comment-list");
-      commentsArray.forEach((comment) => {
-        commentsContainer.innerHTML += createCommentItem(comment);
+      const commentSection = document.querySelector("#comment");
+      commentSection.innerHTML += createCommentSection();
+
+      // const comments = await CommentSource.getComment();
+      // const commentsArray = Object.values(comments);
+      // const commentsContainer = document.querySelector("#comment-list");
+      // commentsArray.forEach((comment) => {
+      //   commentsContainer.innerHTML += createCommentItem(comment);
+      // });
+
+      const addComment = document.getElementById("comment-form");
+      addComment.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const comentatorName = document
+          .getElementById("commentatorName")
+          .value.trim();
+        const comentatorComment = document
+          .getElementById("commentatorComment")
+          .value.trim();
+        const date = new Date().toISOString().split("T")[0];
+
+        const commentData = {
+          name: comentatorName,
+          comment: comentatorComment,
+          date: date,
+        };
+
+        try {
+          const data = await AddComment.addComment(commentData);
+
+          if (data) {
+            const newComments = [{ name, comment, date }];
+            AddComment.renderComment(newComments);
+
+            comentatorName.value = "";
+            comentatorComment.value = "";
+          } else {
+            console.error(data.message);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
       });
     } catch (error) {
       console.error("Error rendering: ", error);

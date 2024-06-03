@@ -2,6 +2,7 @@ import "regenerator-runtime";
 import "../styles/style.css";
 import "../styles/responsive.css";
 import "../styles/home-style.css";
+import "../styles/home-responsive.css";
 import "../styles/article-style.css";
 import App from "./views/app";
 

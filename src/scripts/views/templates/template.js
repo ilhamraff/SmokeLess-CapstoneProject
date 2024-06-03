@@ -8,7 +8,7 @@ const createArticleCard = (article) => {
     <h2>${article.title}</h2>
     <p>${truncatedContent}</p>
     <a href="#">Baca Selengkapnya
-      <i class="fa fa-long-arrow-right"></i>
+      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
     </a>
   </div>`;
 };
@@ -30,16 +30,18 @@ const createCommentSection = () => {
       <img src="/images/user.png" alt="" />
       <div class="form-content">
         <h2>Comment As:</h2>
-        <form action="" class="comment-form">
+        <form action="" class="comment-form" id="comment-form">
           <input
             type="text"
             placeholder="Enter Your Name ..."
             class="user"
+            id="commentatorName"
             /><br />
           <textarea
             type="text"
             placeholder="Enter Your Comment ..."
             class="usercomment"
+            id="commentatorComment"
             ></textarea>
           <button type="submit" disabled id="publish">Publish</button>
         </form>

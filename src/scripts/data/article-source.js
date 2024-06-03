@@ -3,7 +3,7 @@ import API_ENDPOINT from "../globals/api-endpoint";
 class ArticleSource {
   static async getArticle() {
     try {
-      const response = await fetch(API_ENDPOINT.GET_ARTICLE);
+      const response = await fetch(API_ENDPOINT.ARTICLE);
       const data = await response.json();
       return data;
     } catch (error) {
