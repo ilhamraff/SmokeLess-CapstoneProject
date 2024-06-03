@@ -1,14 +1,14 @@
 const createArticleCard = (article) => {
   const truncatedContent =
     article.content.length > 100
-      ? article.content.substring(0, 100) + "..."
+      ? article.content.substring(0, 100) + " ..."
       : article.content;
   return `
   <div class="article-item">
     <h2>${article.title}</h2>
     <p>${truncatedContent}</p>
-    <a href="#">Baca Selengkapnya
-      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+    <a href="#">Baca Selengkapnya  
+      <i class="fa fa-long-arrow-right"></i>
     </a>
   </div>`;
 };

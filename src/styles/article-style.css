@@ -14,10 +14,8 @@
 }
 
 .articles-container .article-item {
-  margin-bottom: 7rem;
-}
-
-.articles-container .article-item {
+  background-color: #008080;
+  color: white;
   padding: 10px 30px;
   margin-bottom: 2rem;
   border-radius: 10px;
@@ -26,12 +24,29 @@
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.articles-container .article-item .button {
-  color: #008080;
+.articles-container .article-item a {
+  line-height: 50px;
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }
 
-.fa-long-arrow-right {
-  color: #008080;
+.articles-container .article-item a i {
+  margin-left: 5px;
+  color: white;
+  opacity: 0;
+  padding-left: 0px;
+  transition: 0.4s;
+  font-size: 24px;
+  display: inline-block;
+  top: 5px;
+  position: relative;
+}
+
+.articles-container .article-item a:hover {
+  i {
+    padding-left: 10px;
+    opacity: 1;
+    font-weight: 300;
+  }
 }
