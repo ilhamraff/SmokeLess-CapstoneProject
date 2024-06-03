@@ -1,0 +1,90 @@
+/* Responsive */
+
+@media screen and (max-width: 1024) {
+    .about-website h1 {
+        font-size: 28px;
+        padding: 20px;
+    }
+    
+    .about-website p {
+        padding: 25px;
+        font-size: 20px;
+    }
+
+    .about-dev h1 {
+        font-size: 28px;
+        padding: 20px;
+    }
+    
+    .about-dev p {
+        padding: 25px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-us .gambar img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+        margin: 25px;
+    }
+
+    .about-us {
+        padding: 50px;
+    }
+
+    .about-us p {
+        font-size: 13px;
+        margin: 15px;
+    }
+
+    .about-us h2 {
+        font-size: 15px;
+        margin: 15px;
+    }
+
+    .about-dev .dev-container {
+        flex-wrap: wrap;
+    }
+
+    .about-dev .card-dev {
+        padding: 20px;
+    }
+
+    .about-dev .dev-picture {
+        padding: 40px;
+    }
+
+    .about-website {
+        padding: 20px;
+    }
+
+    .about-website h1 {
+        font-size: 20px;
+        padding: 25px;
+    }
+
+    .about-website p {
+        font-size: 15px;
+        text-align: justify;
+        padding: 20px;
+    }
+
+    .about-dev {
+        padding: 20px;
+    }
+
+    .about-dev h1 {
+        font-size: 20px;
+        padding: 25px;
+    }
+
+    .about-dev p {
+        font-size: 15px;
+        text-align: justify;
+        padding: 20px;
+    }
+}
+

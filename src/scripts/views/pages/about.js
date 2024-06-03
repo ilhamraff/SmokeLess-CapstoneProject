@@ -1,7 +1,6 @@
 const About = {
     async render() {
       return `
-      <main class="Utama">
         <section class="about-us">
             <div class="gambar">
                 <img src="/images/Logo.png" alt="Logo SmokeLess">
@@ -80,7 +79,6 @@ const About = {
                 </div>
             </div>
         </section>
-    </main>
         `;
     },
   
