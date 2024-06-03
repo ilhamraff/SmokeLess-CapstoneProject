@@ -21,14 +21,10 @@ body {
     text-align: center;
 }
 
-.content-one, .content-two {
+.content-one {
     text-align: center;
     width: 100%;
     margin-top: 5%;
-}
-
-.content-two {
-    margin-top: 15%;
 }
 
 #p1 {
@@ -67,7 +63,6 @@ button:active {
 
 /* Form Section Styling */
 .form-section {
-    display: none;
     text-align: center;
     
 }
