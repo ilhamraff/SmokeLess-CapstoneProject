@@ -3,7 +3,6 @@ class HomeSource {
     try {
       const response = await fetch("disease.json");
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
       console.error("Error fetching data: ", error);
@@ -14,7 +13,6 @@ class HomeSource {
     try {
       const response = await fetch("content.json");
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
       console.error("Error fetching data: ", error);
@@ -25,7 +23,6 @@ class HomeSource {
     try {
       const response = await fetch("benefits.json");
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
       console.error("Error fetching data: ", error);
