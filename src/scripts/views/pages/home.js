@@ -21,7 +21,9 @@ const Home = {
               Bersama Kami Berhenti Merokok<br />
               dan Menuju Hidup yang Lebih Sehat
             </p>
-            <button>Baca Selengkapnya</button>
+            <a href="#cigarette">Baca Selengkapnya  
+              <i class="fa fa-long-arrow-right"></i>
+            </a>
           </div>
           <div class="content-image">
             <img src="./images/1.png" alt="Dicoding Indonesia" />
