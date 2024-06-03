@@ -10,10 +10,6 @@ body {
     line-height: 1.6;
 }
 
-#mainContent {
-    padding: 20px;
-}
-
 /* Survey Description Styling */
 .survey-description {
     max-width: 1200px;
@@ -34,6 +30,10 @@ body {
     margin: 50px auto 20px;
     word-wrap: break-word;
     color: black;
+}
+
+#hasil {
+    margin-top: 50px;
 }
 
 /* Button Styling */
@@ -78,33 +78,67 @@ button:active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#formPerokok form p, #formNonPerokok form p {
+#formPerokok form p {
     text-align: left;
 }
 
-#formPerokok form button, #formNonPerokok form button {
+#formPerokok form button {
     text-align: center;
     margin: 10px auto; /* Center the buttons horizontally */
 }
 
-/* Close Button Styling */
-.close-button {
-    background-color: #ff4b5c;
-    border: none;
+/**
+ * benefits-content
+ */
+
+ #benefits {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .benefits-content {
+    color: black;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .benefits-content .benefits-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .benefits-title p {
+    margin-top: 20px;
+  }
+  
+  .benefits-content .benefits-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+  
+  .benefits-content .card-benefit {
+    background: white;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    text-align: center;
     color: white;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
+    background-color: #008080;
+    transition: all 0.3s ease;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+  
+  .benefits-content .card-benefit:hover {
+    transform: translateY(-10px);
+  }
+  
+  .benefits-content .user-picture img {
+    max-width: 120px;
+    height: auto;
+    text-align: center;
     margin-top: 10px;
-}
-
-.close-button:hover {
-    transform: scale(1.05);
-}
-
-.close-button:active {
-    background-color: #ff1c2e;
-}
+  }

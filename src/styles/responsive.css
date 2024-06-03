@@ -36,6 +36,10 @@
       max-width: 400px;
       min-width: 300px;
   }
+
+  .benefits-container {
+    grid-template-columns: 1fr;
+  }
   /* Footer responsive styles for 768px */
   .footer-top {
     flex-direction: column;

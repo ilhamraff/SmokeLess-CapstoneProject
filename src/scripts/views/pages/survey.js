@@ -82,6 +82,42 @@ const Survey = {
             </form>
             <h2>Hasil Kecanduan:</h2>
             <p id="hasilKecanduan">Skor Anda: -</p>
+          </section>
+          
+          <section class="content" id="benefits">
+            <article class="benefits-content">
+              <div class="benefits-title">
+                <h1>Mengapa Penting Mengukur Kecanduan?</h1>
+                <p>
+                  Mengetahui tingkat kecanduan Anda terhadap nikotin adalah langkah awal yang
+                  penting dalam proses berhenti merokok. Dengan memahami seberapa kuat
+                  ketergantungan anda. Anda dapat mengikuti referensi sebagai berikut :
+                </p>
+              </div>
+              <div class="benefits-container">
+                <div class="card-benefit">
+                  <div class="user-picture">
+                    <img src="/images/strategi.png" alt="" />
+                  </div>
+                  <h3 class="benefits-title">
+                    Menentukan<br />
+                    Strategi Yang Tepat
+                  </h3>
+                </div>
+                <div class="card-benefit">
+                  <div class="user-picture">
+                    <img src="/images/kesadaran.png" alt="" />
+                  </div>
+                  <h3 class="benefits-title">Meningkatkan<br />Kesadaran</h3>
+                </div>
+                <div class="card-benefit">
+                  <div class="user-picture">
+                    <img src="/images/berhenti.png" alt="" />
+                  </div>
+                  <h3 class="benefits-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
+                </div>
+              </div>
+            </article>
           </section>`;
     },
   
