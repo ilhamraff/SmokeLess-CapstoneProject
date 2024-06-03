@@ -27,7 +27,7 @@ const createCommentSection = () => {
   <article class="comments-container hidden">
     <h1>Post A Comment</h1>
     <div class="commentbox">
-      <img src="/image/user.png" alt="" />
+      <img src="/images/user.png" alt="" />
       <div class="form-content">
         <h2>Comment As:</h2>
         <form action="" class="comment-form">
@@ -46,7 +46,7 @@ const createCommentSection = () => {
       </div>
     </div>
     <div class="comment-list">
-      <img src="/image/user.png" alt="" />
+      <img src="/images/user.png" alt="" />
       <div class="comments-detail" id="comment-list"></div>
     </div>
   </article>`;
@@ -67,10 +67,10 @@ const createDiseaseContainer = (disease) => {
   return `
   <div class="disease-container">
     <div class="disease-title">
-      <h3>${disease.title}Penyakit Paru-Paru</h3>
+      <h3>${disease.title}</h3>
     </div>
     <div class="disease-body">
-      <p>${disease.bodys}</p>
+      <p>${disease.body}</p>
     </div>
   </div>`;
 };

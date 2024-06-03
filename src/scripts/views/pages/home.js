@@ -1,6 +1,13 @@
 import ArticleSource from "../../data/article-source";
 import CommentSource from "../../data/comment-source";
-import { createCommentItem, createCommentSection } from "../templates/template";
+import HomeSource from "../../data/home-source";
+import {
+  crateCigaretteContentCard,
+  createBenefitsCard,
+  createCommentItem,
+  createCommentSection,
+  createDiseaseContainer,
+} from "../templates/template";
 
 const Home = {
   async render() {
@@ -26,7 +33,7 @@ const Home = {
           <h1>Apa saja sih Kandungan Rokok itu ?</h1>
           <div class="content-box">
             <div>
-              <img src="image/Group 17.png" alt="" />
+              <img src="images/content-side.png" alt="" />
             </div>
             <div class="card-container"></div>
           </div>
@@ -62,6 +69,24 @@ const Home = {
     try {
       const commentSection = document.querySelector("#comment");
       commentSection.innerHTML = createCommentSection();
+
+      const contents = await HomeSource.getContent();
+      const contentSection = document.querySelector(".card-container");
+      contents.forEach((content) => {
+        contentSection.innerHTML += crateCigaretteContentCard(content);
+      });
+
+      const diseases = await HomeSource.getDisease();
+      const diseaseContainer = document.querySelector(".smoking-disease");
+      diseases.forEach((disease) => {
+        diseaseContainer.innerHTML += createDiseaseContainer(disease);
+      });
+
+      const benefits = await HomeSource.getBenefits();
+      const benefitsSection = document.querySelector(".benefits-container");
+      benefits.forEach((benefit) => {
+        benefitsSection.innerHTML += createBenefitsCard(benefit);
+      });
 
       const comments = await CommentSource.getComment();
       const commentsArray = Object.values(comments);
