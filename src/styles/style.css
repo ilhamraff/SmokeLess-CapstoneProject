@@ -16,6 +16,10 @@ body {
   background: #008080;
   margin: 0;
   padding: 20px 30px;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
 }
 
 .navbar .container {

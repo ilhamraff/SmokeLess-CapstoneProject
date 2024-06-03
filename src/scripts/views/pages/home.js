@@ -26,7 +26,7 @@ const Home = {
             </a>
           </div>
           <div class="content-image">
-            <img src="./images/1.png" alt="Dicoding Indonesia" />
+            <img src="./images/home.png" alt="Dicoding Indonesia" />
           </div>
         </article>
     </section>
