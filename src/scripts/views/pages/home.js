@@ -89,23 +89,20 @@ const Home = {
       const commentSection = document.querySelector("#comment");
       commentSection.innerHTML += createCommentSection();
 
-      // const comments = await CommentSource.getComment();
-      // const commentsArray = Object.values(comments);
-      // const commentsContainer = document.querySelector("#comment-list");
-      // commentsArray.forEach((comment) => {
-      //   commentsContainer.innerHTML += createCommentItem(comment);
-      // });
+      const comments = await CommentSource.getComment();
+      const commentsArray = Object.values(comments);
+      const commentsContainer = document.querySelector("#comment-list");
+      commentsArray.forEach((comment) => {
+        commentsContainer.innerHTML += createCommentItem(comment);
+      });
 
       const addComment = document.getElementById("comment-form");
       addComment.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const comentatorName = document
-          .getElementById("commentatorName")
-          .value.trim();
-        const comentatorComment = document
-          .getElementById("commentatorComment")
-          .value.trim();
+        const comentatorName = document.getElementById("commentatorName").value;
+        const comentatorComment =
+          document.getElementById("commentatorComment").value;
         const date = new Date().toISOString().split("T")[0];
 
         const commentData = {
@@ -117,14 +114,13 @@ const Home = {
         try {
           const data = await AddComment.addComment(commentData);
 
-          if (data) {
-            const newComments = [{ name, comment, date }];
-            AddComment.renderComment(newComments);
+          if (data && data.name) {
+            AddComment.renderComment(commentData);
 
-            comentatorName.value = "";
-            comentatorComment.value = "";
+            document.getElementById("commentatorName").value = "";
+            document.getElementById("commentatorComment").value = "";
           } else {
-            console.error(data.message);
+            console.error("Unexpected data format:", data);
           }
         } catch (error) {
           console.error("Error:", error);

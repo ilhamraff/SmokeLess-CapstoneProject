@@ -17,18 +17,15 @@ const AddComment = {
     }
   },
 
-  renderComment(comments) {
+  renderComment(comment) {
     const commentList = document.querySelector("#comment-list");
-    // commentList.innerHTML = "";
-    comments.forEach((comment) => {
-      const commentItem = document.createElement("div");
-      commentItem.classList.add("comment-item");
-      commentItem.innerHTML = `
-        <h4>${comment.name}</h4>
-        <p>${comment.comment}</p>
-        <p>${comment.date}</p>`;
-      commentList.appendChild(commentItem);
-    });
+    const commentItem = document.createElement("div");
+    commentItem.classList.add("comment-item");
+    commentItem.innerHTML = `
+      <h4>${comment.name}</h4>
+      <p>${comment.comment}</p>
+      <p>${comment.date}</p>`;
+    commentList.appendChild(commentItem);
   },
 };
 

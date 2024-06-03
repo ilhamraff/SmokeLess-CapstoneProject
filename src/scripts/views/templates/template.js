@@ -7,7 +7,7 @@ const createArticleCard = (article) => {
   <div class="article-item">
     <h2>${article.title}</h2>
     <p>${truncatedContent}</p>
-    <a href="#">Baca Selengkapnya  
+    <a href="/#/detail/${article.id}">Baca Selengkapnya  
       <i class="fa fa-long-arrow-right"></i>
     </a>
   </div>`;
@@ -43,7 +43,7 @@ const createCommentSection = () => {
             class="usercomment"
             id="commentatorComment"
             ></textarea>
-          <button type="submit" disabled id="publish">Publish</button>
+          <button type="submit" id="publish">Publish</button>
         </form>
       </div>
     </div>

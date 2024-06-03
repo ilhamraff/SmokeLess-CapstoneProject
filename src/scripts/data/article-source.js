@@ -11,9 +11,9 @@ class ArticleSource {
     }
   }
 
-  static async getDetailArticle() {
+  static async getDetailArticle(id) {
     try {
-      const response = await fetch(API_ENDPOINT.DETAIL_ARTICLE);
+      const response = await fetch(API_ENDPOINT.DETAIL_ARTICLE(id));
       const data = await response.json();
       return data;
     } catch (error) {
