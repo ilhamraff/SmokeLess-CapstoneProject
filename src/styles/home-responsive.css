@@ -6,11 +6,21 @@
   body {
     box-sizing: border-box;
   }
+
+  .content {
+    width: 100%;
+  }
+
+  .content-image img {
+    max-width: 300px;
+  }
+
   .welcome-content {
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
     margin-bottom: 50px;
+    justify-content: space-evenly;
   }
 
   .welcome-content .content-image {
@@ -27,8 +37,17 @@
     justify-content: center;
   }
 
+  .cigarette-content .content-box img {
+    max-width: 300px;
+  }
+
   .smoking-disease .disease-container {
     grid-template-columns: 1fr;
+  }
+
+  .comments-container .commentbox,
+  .comment-list {
+    flex-direction: column;
   }
 }
 

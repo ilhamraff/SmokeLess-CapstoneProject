@@ -4,6 +4,10 @@
   padding: 0 2rem;
 }
 
+.articles-container {
+  margin-bottom: 100px;
+}
+
 .article-content .article-headline {
   text-align: center;
   height: 50vh;
