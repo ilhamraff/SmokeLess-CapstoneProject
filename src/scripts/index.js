@@ -4,6 +4,7 @@ import "../styles/responsive.css";
 import "../styles/home-style.css";
 import "../styles/home-responsive.css";
 import "../styles/article-style.css";
+import "../styles/survey-style.css"
 import "../styles/about-responsive.css"
 import "../styles/about-style.css"
 import App from "./views/app";
