@@ -12,7 +12,7 @@
   }
 
   .content-image img {
-    max-width: 300px;
+    max-width: 350px;
   }
 
   .welcome-content {
@@ -21,6 +21,7 @@
     text-align: center;
     margin-bottom: 50px;
     justify-content: space-evenly;
+    min-height: 50vh;
   }
 
   .welcome-content .content-image {
@@ -41,8 +42,20 @@
     max-width: 300px;
   }
 
+  .smoking-disease {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .smoking-disease .disease-container {
     grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .smoking-disease .disease-container .disease-body {
+    padding: 0;
   }
 
   .comments-container .commentbox,
@@ -52,7 +65,4 @@
 }
 
 @media screen and (max-width: 480px) {
-}
-
-@media screen and (max-width: 320px) {
 }

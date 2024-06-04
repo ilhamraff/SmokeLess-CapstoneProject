@@ -8,7 +8,7 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 75vh;
+  min-height: 70vh;
 }
 
 .content-description .title {
@@ -21,19 +21,23 @@
   line-height: 1.7rem;
 }
 
-.content-description button {
+.content-description a {
   padding: 0.8rem 2.5rem;
   border: 2px solid transparent;
   border-radius: 20px;
   margin-block-start: 1rem;
+  text-decoration: none;
   background-color: #008080;
   color: white;
-  font-weight: 700;
   cursor: pointer;
   transition: all 0.15s ease-in;
 }
 
-.content-description button:hover {
+.content-description a i {
+  margin-left: 10px;
+}
+
+.content-description a:hover {
   color: #008080;
   background-color: white;
   border-color: #008080;
@@ -116,6 +120,7 @@
 
 .smoking-disease h1 {
   font-size: 28px;
+  color: #008080;
 }
 
 .smoking-disease .disease-container {
