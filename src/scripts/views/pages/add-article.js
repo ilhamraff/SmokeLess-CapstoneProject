@@ -1,5 +1,6 @@
 import AddArticleHandler from "../../utils/add-article-handler";
 import { createFormArticle } from "../templates/template";
+import Swal from "sweetalert2";
 
 const AddArticle = {
   async render() {
@@ -33,15 +34,40 @@ const AddArticle = {
 
         try {
           const data = await AddArticleHandler.addArticle(articleData);
-          document.getElementById("author").value = "";
-          document.getElementById("title").value = "";
-          document.getElementById("body").value = "";
+
           if (data && data.name) {
             AddArticleHandler.renderArticle(articleData);
           } else {
             console.error("Unexpected data format:", data);
           }
-        } catch (error) {}
+        } catch (error) {
+          console.error("Error:", error);
+        }
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          },
+        });
+        Toast.fire({
+          icon: "success",
+          title: "Berhasil Menambah Artikel",
+        });
+
+        addArticleForm.reset();
+      });
+
+      const clearForm = document.getElementById("clear");
+      clearForm.addEventListener("click", () => {
+        document.getElementById("author").value = "";
+        document.getElementById("title").value = "";
+        document.getElementById("body").value = "";
       });
     } catch (error) {
       console.error("Error rendering articles:", error);
