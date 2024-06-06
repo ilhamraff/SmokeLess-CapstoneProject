@@ -89,7 +89,7 @@ const createBenefitsCard = (benefit) => {
 
 const createFormArticle = () => {
   return `
-  <form action="">
+  <form action="" id="article-form">
       <h2>Buat Artikel</h2>
       <div class="form-component">
         <i class="fa fa-user" aria-hidden="true"></i>
