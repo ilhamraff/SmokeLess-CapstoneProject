@@ -116,10 +116,11 @@ const createFormArticle = () => {
         ></textarea>
       </div>
       <div class="form-button">
-        <button id="clear">Bersihkan Form</button>
+        <button type="button" id="clear">Bersihkan Form</button>
         <button type="submit">Tambah Artikel</button>
       </div>
-  </form>`;
+  </form>
+  `;
 };
 
 const createDetailArticleSection = (article) => `

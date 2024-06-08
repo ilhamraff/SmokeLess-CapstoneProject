@@ -16,6 +16,13 @@ const AddArticle = {
       const formContainer = document.querySelector(".form-container");
       formContainer.innerHTML += createFormArticle();
 
+      const clearForm = document.getElementById("clear");
+      clearForm.addEventListener("click", () => {
+        document.getElementById("author").value = "";
+        document.getElementById("title").value = "";
+        document.getElementById("body").value = "";
+      });
+
       const addArticleForm = document.getElementById("article-form");
       addArticleForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -25,12 +32,32 @@ const AddArticle = {
         const articleBody = document.getElementById("body").value;
         const date = new Date().toISOString().split("T")[0];
 
+        if (!articleAuthor || !articleTitle || !articleBody) {
+          return Swal.fire({
+            icon: "error",
+            title: "Harap Isi Semua Kolom",
+          });
+        }
+
         const articleData = {
           author: articleAuthor,
           title: articleTitle,
           content: articleBody,
           createdAt: date,
         };
+
+        const { isConfirmed } = await Swal.fire({
+          title: "Konfirmasi?",
+          text: "Kamu yakin mau Menambah Artikel ini?",
+          icon: "question",
+          showCancelButton: true,
+          confirmButtonText: "Ya",
+          cancelButtonText: "Batal",
+        });
+
+        if (!isConfirmed) {
+          return;
+        }
 
         try {
           const data = await AddArticleHandler.addArticle(articleData);
@@ -61,13 +88,6 @@ const AddArticle = {
         });
 
         addArticleForm.reset();
-      });
-
-      const clearForm = document.getElementById("clear");
-      clearForm.addEventListener("click", () => {
-        document.getElementById("author").value = "";
-        document.getElementById("title").value = "";
-        document.getElementById("body").value = "";
       });
     } catch (error) {
       console.error("Error rendering articles:", error);
