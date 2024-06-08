@@ -1,16 +1,17 @@
 .add-article {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   margin-top: 120px;
   display: flex;
   justify-content: center;
+  padding: 2rem;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 700px;
+  width: 100%;
   background-color: #f8f5f5;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
