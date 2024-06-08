@@ -1,0 +1,47 @@
+.detail-article {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.detail-article .detail-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.detail-article h2 {
+  margin-bottom: 20px;
+}
+
+.article-detail {
+  margin-bottom: 20px;
+}
+
+.article-detail .article-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.article-detail .article-author {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.article-detail .article-date {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.article-detail .article-body {
+  line-height: 1.6;
+  padding: 0;
+  text-align: justify;
+}
+
+.detail-aside {
+  text-align: center;
+}

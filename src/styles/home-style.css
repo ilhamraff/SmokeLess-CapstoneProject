@@ -229,6 +229,10 @@ textarea {
   border: 1px solid black;
 }
 
+.comment-form textarea {
+  height: 100px;
+}
+
 .comment-form button {
   background-color: #008080;
   color: white;

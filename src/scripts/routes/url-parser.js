@@ -6,8 +6,17 @@ const UrlParser = {
   },
 
   parseActiveUrlWithoutCombiner() {
-    const url = window.location.hash.slice(1).toLowerCase();
-    return this._urlSplitter(url);
+    const url = window.location.hash.slice(1);
+    const urlsSplits = url.split("/");
+
+    // Menggunakan `decodeURIComponent` untuk mempertahankan huruf besar kecil asli
+    const id = decodeURIComponent(urlsSplits[2]) || null;
+
+    return {
+      resource: urlsSplits[1] || null,
+      id: id,
+      verb: urlsSplits[3] || null,
+    };
   },
 
   _urlSplitter(url) {

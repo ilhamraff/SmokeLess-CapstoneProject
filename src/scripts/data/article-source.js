@@ -17,7 +17,8 @@ class ArticleSource {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error fetching article detail:", error);
+      return null;
     }
   }
 }

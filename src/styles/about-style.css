@@ -113,6 +113,7 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .dev-container .icon-picture img:hover {

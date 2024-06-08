@@ -26,9 +26,21 @@ const Article = {
       const articlesArray = Object.values(articles); // Ubah objek menjadi array
       const articlesContainer = document.querySelector("#articles");
 
-      articlesArray.forEach((article) => {
-        articlesContainer.innerHTML += createArticleCard(article);
-      });
+      for (const [id, article] of Object.entries(articles)) {
+        const card = document.createElement("div");
+        card.className = "article-item";
+        card.dataset.id = id;
+        console.log(article);
+        console.log(id);
+
+        card.innerHTML = createArticleCard(article, id);
+
+        card.addEventListener("click", () => {
+          window.location.hash = `#/detail/${id}`;
+        });
+
+        articlesContainer.appendChild(card);
+      }
     } catch (error) {
       console.error("Error rendering articles:", error);
     }

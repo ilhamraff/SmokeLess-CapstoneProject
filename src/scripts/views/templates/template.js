@@ -1,16 +1,14 @@
-const createArticleCard = (article) => {
+const createArticleCard = (article, id) => {
   const truncatedContent =
     article.content.length > 100
       ? article.content.substring(0, 100) + " ..."
       : article.content;
   return `
-  <div class="article-item">
     <h2>${article.title}</h2>
     <p>${truncatedContent}</p>
-    <a href="/#/detail/${article.id}">Baca Selengkapnya  
+    <a href="/#/detail/${id}">Baca Selengkapnya  
       <i class="fa fa-long-arrow-right"></i>
-    </a>
-  </div>`;
+    </a>`;
 };
 
 const createCommentItem = (comment) => {
@@ -124,6 +122,19 @@ const createFormArticle = () => {
   </form>`;
 };
 
+const createDetailArticleSection = (article) => `
+  <div class="article-detail">
+    <h2 class="article-title">${article.title || "Title not available"}</h2>
+    <div class="article-author">by ${
+      article.author || "Author not available"
+    }</div>
+    <div class="article-date">${article.createdAt || "Date not available"}</div>
+    <div class="article-body">
+      <p>${article.content || "Content not available"}</p>
+    </div>
+  </div>
+`;
+
 export {
   createArticleCard,
   createCommentItem,
@@ -132,4 +143,5 @@ export {
   createDiseaseContainer,
   createBenefitsCard,
   createFormArticle,
+  createDetailArticleSection,
 };
