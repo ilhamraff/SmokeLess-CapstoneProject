@@ -142,3 +142,36 @@ button:active {
     text-align: center;
     margin-top: 10px;
   }
+
+  /*progress bar*/
+
+.progress-container {
+  width: 50%;
+  background-color: #f3f3f3;
+  border-radius: 25px;
+  margin: 10px auto; /* Mengatur margin secara otomatis untuk memposisikan di tengah */
+  padding: 5px; /* Memberi sedikit ruang di dalam container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk tampilan yang lebih baik */
+}
+
+.progress-bar {
+  height: 30px;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-weight: bold; /* Menambahkan font tebal untuk teks di dalam progress bar */
+  transition: width 0.5s; /* Menambahkan transisi untuk animasi yang lebih halus */
+}
+
+.low {
+  background-color: #4caf50; /* Hijau */
+}
+
+.medium {
+  background-color: #ff9800; /* Oranye */
+}
+
+.high {
+  background-color: #f44336; /* Merah */
+}

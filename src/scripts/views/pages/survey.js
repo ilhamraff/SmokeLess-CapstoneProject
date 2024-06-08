@@ -14,7 +14,7 @@ const Survey = {
 
          <!-- Form Perokok -->
          <section id="formPerokok" class="form-section">
-            <h2>Formulir Perokok</h2>
+            <h2>Test Kecanduan</h2>
             <form>
                 
               <p>1. Usia:</p>
@@ -175,9 +175,37 @@ const Survey = {
       } else {
           tingkatKecanduan = "Ketergantungan tinggi";
       }
+
+      // Menghitung persentase
+   var persentase = (skor / 12) * 100;
+
+   // Menentukan warna progress bar berdasarkan tingkat kecanduan
+   var barClass = "";
+   if (skor <= 4) {
+     barClass = "low";
+   } else if (skor <= 7) {
+     barClass = "medium";
+   } else {
+     barClass = "high";
+   }
+
+   // Menampilkan hasil dengan progress bar
+   var progressBar =`<div class="progress-container">
+                        <div class="progress-bar ${barClass}" style="width: ${persentase}%">
+                            ${persentase.toFixed(2)}%
+                        </div>
+                    </div>`;
     
       // Menampilkan hasil
-      document.getElementById("hasilKecanduan").innerHTML = "Skor Anda: " + skor + " - " + tingkatKecanduan;
+      document.getElementById("hasilKecanduan").innerHTML =
+          "Skor Anda: " +
+          skor +
+          " - " +
+          tingkatKecanduan +
+          " (" +
+          persentase.toFixed(2) +
+          "%)<br>" +
+          progressBar;  
     },
     
     clearForm() {

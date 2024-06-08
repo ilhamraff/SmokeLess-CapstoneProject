@@ -40,6 +40,11 @@
   .benefits-container {
     grid-template-columns: 1fr;
   }
+
+  .progress-container {
+    width: 70%; /* Mengurangi lebar pada perangkat dengan lebar layar lebih kecil */
+  }
+
   /* Footer responsive styles for 768px */
   .footer-top {
     flex-direction: column;
@@ -82,6 +87,23 @@
       max-width: 270px;
       min-width: 200px;
   }
+
+  .progress-container {
+    width: 90%; /* Mengurangi lebar lebih lanjut pada perangkat dengan lebar layar sangat kecil */
+  }
+
+  .low {
+    font-size: small;
+  }
+
+  .medium {
+    font-size: small;
+  }
+
+  .high {
+    font-size: small;
+  }
+
   /* Footer responsive styles */
   .footer-top {
     flex-direction: column;
