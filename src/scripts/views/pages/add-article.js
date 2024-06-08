@@ -1,20 +1,29 @@
 import AddArticleHandler from "../../utils/add-article-handler";
 import { createFormArticle } from "../templates/template";
 import Swal from "sweetalert2";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const AddArticle = {
   async render() {
     return `
     <section class="add-article">
         <div class="form-container"></div>
-    </section>
-`;
+    </section>`;
   },
 
   async afterRender() {
     try {
       const formContainer = document.querySelector(".form-container");
       formContainer.innerHTML += createFormArticle();
+
+      let bodyEditor;
+      ClassicEditor.create(document.querySelector("#body"))
+        .then((editor) => {
+          bodyEditor = editor;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
 
       const clearForm = document.getElementById("clear");
       clearForm.addEventListener("click", () => {
@@ -29,7 +38,7 @@ const AddArticle = {
 
         const articleAuthor = document.getElementById("author").value;
         const articleTitle = document.getElementById("title").value;
-        const articleBody = document.getElementById("body").value;
+        const articleBody = bodyEditor.getData();
         const date = new Date().toISOString().split("T")[0];
 
         if (!articleAuthor || !articleTitle || !articleBody) {
@@ -88,6 +97,7 @@ const AddArticle = {
         });
 
         addArticleForm.reset();
+        bodyEditor.setData("");
       });
     } catch (error) {
       console.error("Error rendering articles:", error);

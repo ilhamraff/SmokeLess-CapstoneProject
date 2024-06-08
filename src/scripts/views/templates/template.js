@@ -107,14 +107,11 @@ const createFormArticle = () => {
           placeholder="Silahkan Masukkan Judul Artikel ..."
         />
       </div>
-      <div class="form-component">
-        <i class="fa fa-align-justify" aria-hidden="true"></i>
-        <textarea
+      <textarea
           name="body"
           id="body"
           placeholder="Silahkan Masukkan Isi Konten Artikel ..."
         ></textarea>
-      </div>
       <div class="form-button">
         <button type="button" id="clear">Bersihkan Form</button>
         <button type="submit">Tambah Artikel</button>
