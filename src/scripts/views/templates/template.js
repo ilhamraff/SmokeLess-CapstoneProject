@@ -87,6 +87,43 @@ const createBenefitsCard = (benefit) => {
   </div>`;
 };
 
+const createFormArticle = () => {
+  return `
+  <form action="" id="article-form">
+      <h2>Buat Artikel</h2>
+      <div class="form-component">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Silahkan Masukkan Nama Author ..."
+        />
+      </div>
+      <div class="form-component">
+        <i class="fa fa-font" aria-hidden="true"></i>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Silahkan Masukkan Judul Artikel ..."
+        />
+      </div>
+      <div class="form-component">
+        <i class="fa fa-align-justify" aria-hidden="true"></i>
+        <textarea
+          name="body"
+          id="body"
+          placeholder="Silahkan Masukkan Isi Konten Artikel ..."
+        ></textarea>
+      </div>
+      <div class="form-button">
+        <button id="clear">Bersihkan Form</button>
+        <button type="submit">Tambah Artikel</button>
+      </div>
+  </form>`;
+};
+
 export {
   createArticleCard,
   createCommentItem,
@@ -94,4 +131,5 @@ export {
   crateCigaretteContentCard,
   createDiseaseContainer,
   createBenefitsCard,
+  createFormArticle,
 };
