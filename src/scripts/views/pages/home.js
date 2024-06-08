@@ -1,14 +1,14 @@
-import ArticleSource from "../../data/article-source";
-import CommentSource from "../../data/comment-source";
-import HomeSource from "../../data/home-source";
-import AddComment from "../../utils/comment-handler";
+import ArticleSource from '../../data/article-source';
+import CommentSource from '../../data/comment-source';
+import HomeSource from '../../data/home-source';
+import AddComment from '../../utils/comment-handler';
 import {
   crateCigaretteContentCard,
   createBenefitsCard,
   createCommentItem,
   createCommentSection,
   createDiseaseContainer,
-} from "../templates/template";
+} from '../templates/template';
 
 const Home = {
   async render() {
@@ -71,46 +71,45 @@ const Home = {
   async afterRender() {
     try {
       const contents = await HomeSource.getContent();
-      const contentSection = document.querySelector(".card-container");
+      const contentSection = document.querySelector('.card-container');
       contents.forEach((content) => {
         contentSection.innerHTML += crateCigaretteContentCard(content);
       });
 
       const diseases = await HomeSource.getDisease();
-      const diseaseContainer = document.querySelector(".smoking-disease");
+      const diseaseContainer = document.querySelector('.smoking-disease');
       diseases.forEach((disease) => {
         diseaseContainer.innerHTML += createDiseaseContainer(disease);
       });
 
       const benefits = await HomeSource.getBenefits();
-      const benefitsSection = document.querySelector(".benefits-container");
+      const benefitsSection = document.querySelector('.benefits-container');
       benefits.forEach((benefit) => {
         benefitsSection.innerHTML += createBenefitsCard(benefit);
       });
 
-      const commentSection = document.querySelector("#comment");
+      const commentSection = document.querySelector('#comment');
       commentSection.innerHTML += createCommentSection();
 
       const comments = await CommentSource.getComment();
       const commentsArray = Object.values(comments);
-      const commentsContainer = document.querySelector("#comment-list");
+      const commentsContainer = document.querySelector('#comment-list');
       commentsArray.forEach((comment) => {
         commentsContainer.innerHTML += createCommentItem(comment);
       });
 
-      const addComment = document.getElementById("comment-form");
-      addComment.addEventListener("submit", async (event) => {
+      const addComment = document.getElementById('comment-form');
+      addComment.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const comentatorName = document.getElementById("commentatorName").value;
-        const comentatorComment =
-          document.getElementById("commentatorComment").value;
-        const date = new Date().toISOString().split("T")[0];
+        const comentatorName = document.getElementById('commentatorName').value;
+        const comentatorComment = document.getElementById('commentatorComment').value;
+        const date = new Date().toISOString().split('T')[0];
 
         const commentData = {
           name: comentatorName,
           comment: comentatorComment,
-          date: date,
+          date,
         };
 
         try {
@@ -119,17 +118,17 @@ const Home = {
           if (data && data.name) {
             AddComment.renderComment(commentData);
 
-            document.getElementById("commentatorName").value = "";
-            document.getElementById("commentatorComment").value = "";
+            document.getElementById('commentatorName').value = '';
+            document.getElementById('commentatorComment').value = '';
           } else {
-            console.error("Unexpected data format:", data);
+            console.error('Unexpected data format:', data);
           }
         } catch (error) {
-          console.error("Error:", error);
+          console.error('Error:', error);
         }
       });
     } catch (error) {
-      console.error("Error rendering: ", error);
+      console.error('Error rendering: ', error);
     }
   },
 };

@@ -1,6 +1,6 @@
-import AddArticleHandler from "../../utils/add-article-handler";
-import { createFormArticle } from "../templates/template";
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
+import AddArticleHandler from '../../utils/add-article-handler';
+import { createFormArticle } from '../templates/template';
 
 const AddArticle = {
   async render() {
@@ -13,17 +13,17 @@ const AddArticle = {
 
   async afterRender() {
     try {
-      const formContainer = document.querySelector(".form-container");
+      const formContainer = document.querySelector('.form-container');
       formContainer.innerHTML += createFormArticle();
 
-      const addArticleForm = document.getElementById("article-form");
-      addArticleForm.addEventListener("submit", async (event) => {
+      const addArticleForm = document.getElementById('article-form');
+      addArticleForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const articleAuthor = document.getElementById("author").value;
-        const articleTitle = document.getElementById("title").value;
-        const articleBody = document.getElementById("body").value;
-        const date = new Date().toISOString().split("T")[0];
+        const articleAuthor = document.getElementById('author').value;
+        const articleTitle = document.getElementById('title').value;
+        const articleBody = document.getElementById('body').value;
+        const date = new Date().toISOString().split('T')[0];
 
         const articleData = {
           author: articleAuthor,
@@ -38,15 +38,15 @@ const AddArticle = {
           if (data && data.name) {
             AddArticleHandler.renderArticle(articleData);
           } else {
-            console.error("Unexpected data format:", data);
+            console.error('Unexpected data format:', data);
           }
         } catch (error) {
-          console.error("Error:", error);
+          console.error('Error:', error);
         }
 
         const Toast = Swal.mixin({
           toast: true,
-          position: "top-end",
+          position: 'top-end',
           showConfirmButton: false,
           timer: 2000,
           timerProgressBar: true,
@@ -56,21 +56,21 @@ const AddArticle = {
           },
         });
         Toast.fire({
-          icon: "success",
-          title: "Berhasil Menambah Artikel",
+          icon: 'success',
+          title: 'Berhasil Menambah Artikel',
         });
 
         addArticleForm.reset();
       });
 
-      const clearForm = document.getElementById("clear");
-      clearForm.addEventListener("click", () => {
-        document.getElementById("author").value = "";
-        document.getElementById("title").value = "";
-        document.getElementById("body").value = "";
+      const clearForm = document.getElementById('clear');
+      clearForm.addEventListener('click', () => {
+        document.getElementById('author').value = '';
+        document.getElementById('title').value = '';
+        document.getElementById('body').value = '';
       });
     } catch (error) {
-      console.error("Error rendering articles:", error);
+      console.error('Error rendering articles:', error);
     }
   },
 };

@@ -84,7 +84,8 @@ const About = {
         `;
   },
 
-  async afterRender() {},
+  async afterRender() {
+  },
 };
 
 export default About;

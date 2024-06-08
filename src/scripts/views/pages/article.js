@@ -1,5 +1,5 @@
-import ArticleSource from "../../data/article-source";
-import { createArticleCard } from "../templates/template";
+import ArticleSource from '../../data/article-source';
+import { createArticleCard } from '../templates/template';
 
 const Article = {
   async render() {
@@ -24,13 +24,13 @@ const Article = {
     try {
       const articles = await ArticleSource.getArticle();
       const articlesArray = Object.values(articles); // Ubah objek menjadi array
-      const articlesContainer = document.querySelector("#articles");
+      const articlesContainer = document.querySelector('#articles');
 
       articlesArray.forEach((article) => {
         articlesContainer.innerHTML += createArticleCard(article);
       });
     } catch (error) {
-      console.error("Error rendering articles:", error);
+      console.error('Error rendering articles:', error);
     }
   },
 };

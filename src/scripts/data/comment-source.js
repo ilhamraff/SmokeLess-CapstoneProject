@@ -1,4 +1,4 @@
-import API_ENDPOINT from "../globals/api-endpoint";
+import API_ENDPOINT from '../globals/api-endpoint';
 
 class CommentSource {
   static async getComment() {
@@ -7,7 +7,7 @@ class CommentSource {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error('Error fetching data:', error);
     }
   }
 }

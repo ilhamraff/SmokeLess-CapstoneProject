@@ -1,6 +1,6 @@
 const Survey = {
-    async render() {
-      return `
+  async render() {
+    return `
       <section class="survey-description">
             <div class="content-one">
                 <h1 class="judul1">Ukur Tingkat Kecanduan Anda</h1>
@@ -119,78 +119,75 @@ const Survey = {
               </div>
             </article>
           </section>`;
-    },
-  
-    async afterRender() {
-        
-        const clearButton = document.querySelector(".clear");
-        clearButton.addEventListener('click', () => {
-            this.clearForm();
-        });
+  },
 
-        const hitungButton = document.querySelector(".hitung");
-        hitungButton.addEventListener('click', () => {
-            this.hitungKecanduan();
-        });
-        
-    },
+  async afterRender() {
+    const clearButton = document.querySelector('.clear');
+    clearButton.addEventListener('click', () => {
+      this.clearForm();
+    });
 
-    hitungKecanduan() {
-      var questions = ['age','gender','education','occupation', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
-      var allAnswered = true;
-      var firstUnanswered = null;
-    
-      questions.forEach(function(question) {
-          if (!document.querySelector('input[name="' + question + '"]:checked')) {
-              allAnswered = false;
-              if (!firstUnanswered) {
-                  firstUnanswered = question;
-              }
-          }
-      });
-    
-      if (!allAnswered) {
-          alert('Harap isi semua pertanyaan.');
-          document.querySelector('input[name="' + firstUnanswered + '"]').scrollIntoView();
-          document.querySelector('input[name="' + firstUnanswered + '"]').focus();
-          return;
+    const hitungButton = document.querySelector('.hitung');
+    hitungButton.addEventListener('click', () => {
+      this.hitungKecanduan();
+    });
+  },
+
+  hitungKecanduan() {
+    const questions = ['age', 'gender', 'education', 'occupation', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
+    let allAnswered = true;
+    let firstUnanswered = null;
+
+    questions.forEach((question) => {
+      if (!document.querySelector(`input[name="${question}"]:checked`)) {
+        allAnswered = false;
+        if (!firstUnanswered) {
+          firstUnanswered = question;
+        }
       }
-    
-      var skor = 0;
-    
-      // Mengambil nilai dari jawaban yang dipilih
-      questions.forEach(function(question) {
-          skor += parseInt(document.querySelector('input[name="' + question + '"]:checked').value);
-      });
-    
-      // Menentukan tingkat kecanduan berdasarkan skor
-      var tingkatKecanduan = "";
-    
-      if (skor <= 2) {
-          tingkatKecanduan = "Ketergantungan rendah";
-      } else if (skor <= 4) {
-          tingkatKecanduan = "Ketergantungan rendah sampai sedang";
-      } else if (skor <= 7) {
-          tingkatKecanduan = "Ketergantungan sedang";
-      } else {
-          tingkatKecanduan = "Ketergantungan tinggi";
-      }
-    
-      // Menampilkan hasil
-      document.getElementById("hasilKecanduan").innerHTML = "Skor Anda: " + skor + " - " + tingkatKecanduan;
-    },
-    
-    clearForm() {
-        // Menghapus semua pilihan jawaban
-        document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(radio => {
-            radio.checked = false;
-        });
-    
-        // Menghapus hasil kecanduan
-        document.getElementById("hasilKecanduan").innerHTML = "Skor Anda: -";
-    },
+    });
 
-  };
-  
-  export default Survey;
-  
+    if (!allAnswered) {
+      alert('Harap isi semua pertanyaan.');
+      document.querySelector(`input[name="${firstUnanswered}"]`).scrollIntoView();
+      document.querySelector(`input[name="${firstUnanswered}"]`).focus();
+      return;
+    }
+
+    let skor = 0;
+
+    // Mengambil nilai dari jawaban yang dipilih
+    questions.forEach((question) => {
+      skor += parseInt(document.querySelector(`input[name="${question}"]:checked`).value);
+    });
+
+    // Menentukan tingkat kecanduan berdasarkan skor
+    let tingkatKecanduan = '';
+
+    if (skor <= 2) {
+      tingkatKecanduan = 'Ketergantungan rendah';
+    } else if (skor <= 4) {
+      tingkatKecanduan = 'Ketergantungan rendah sampai sedang';
+    } else if (skor <= 7) {
+      tingkatKecanduan = 'Ketergantungan sedang';
+    } else {
+      tingkatKecanduan = 'Ketergantungan tinggi';
+    }
+
+    // Menampilkan hasil
+    document.getElementById('hasilKecanduan').innerHTML = `Skor Anda: ${skor} - ${tingkatKecanduan}`;
+  },
+
+  clearForm() {
+    // Menghapus semua pilihan jawaban
+    document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach((radio) => {
+      radio.checked = false;
+    });
+
+    // Menghapus hasil kecanduan
+    document.getElementById('hasilKecanduan').innerHTML = 'Skor Anda: -';
+  },
+
+};
+
+export default Survey;

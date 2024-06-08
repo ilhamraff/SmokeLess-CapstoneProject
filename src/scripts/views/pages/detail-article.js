@@ -1,9 +1,9 @@
-import ArticleSource from "../../data/article-source";
-import UrlParser from "../../routes/url-parser";
+import ArticleSource from '../../data/article-source';
+import UrlParser from '../../routes/url-parser';
 
 const Detail = {
   async render() {
-    return `<h2>Detail Artikel</h2>`;
+    return '<h2>Detail Artikel</h2>';
   },
 
   async afterRender() {
