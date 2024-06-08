@@ -14,7 +14,10 @@ const Article = {
             rekomendasikan pada halaman ini, selamat membaca.
           </p>
         </div>
-        <a href="#/add-article">Buat Artikel</a>
+        <div class="go-to-add">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          <a href="#/add-article">Buat Artikel</a>
+        </div> 
         <div class="articles-container" id="articles"></div>
     </section>
 `;

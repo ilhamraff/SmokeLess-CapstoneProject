@@ -55,3 +55,14 @@
     font-weight: 300;
   }
 }
+
+.go-to-add {
+  margin: 1.5rem;
+}
+
+.go-to-add a,
+i {
+  text-decoration: none;
+  font-style: italic;
+  color: #008080;
+}
