@@ -14,7 +14,7 @@ body {
  */
 
 .navbar {
-  background: #008080;
+  background: white;
   margin: 0;
   padding: 20px 30px;
   position: fixed;
@@ -22,6 +22,7 @@ body {
   width: 100%;
   display: block;
   transition: top 0.3s;
+  box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .container {
@@ -36,7 +37,7 @@ body {
   font-size: 14pt;
   font-weight: bold;
   text-decoration: none;
-  color: white;
+  color: #008080;
 }
 
 .navbar .container .menu {
@@ -53,9 +54,13 @@ body {
 
 .navbar .container .menu li a {
   padding: 10px;
-  color: white;
+  color: black;
   text-decoration: none;
   display: inline-block;
+}
+
+.navbar .container .menu li a:hover {
+  color: #008080;
 }
 
 .tombol {

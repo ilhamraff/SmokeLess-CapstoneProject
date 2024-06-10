@@ -1,6 +1,9 @@
 import ArticleSource from "../../data/article-source";
 import UrlParser from "../../routes/url-parser";
-import { createDetailArticleSection } from "../templates/template";
+import {
+  createArticleCardAside,
+  createDetailArticleSection,
+} from "../templates/template";
 
 const Detail = {
   async render() {
@@ -30,6 +33,27 @@ const Detail = {
       detailContainer.innerHTML =
         "<p>Artikel tidak ditemukan atau terjadi kesalahan saat mengambil data.</p>";
     }
+
+    try {
+      const articlesAside = await ArticleSource.getArticle();
+      const articlesAsideContainer = document.querySelector(".aside-content");
+
+      for (const [id, article] of Object.entries(articlesAside)) {
+        const card = document.createElement("div");
+        card.className = "article-item-aside";
+        card.dataset.id = id;
+        console.log(article);
+        console.log(id);
+
+        card.innerHTML = createArticleCardAside(article, id);
+
+        card.addEventListener("click", () => {
+          window.location.hash = `#/detail/${id}`;
+        });
+
+        articlesAsideContainer.appendChild(card);
+      }
+    } catch (error) {}
   },
 };
 

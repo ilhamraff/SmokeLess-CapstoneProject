@@ -1,5 +1,5 @@
 .detail-article {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   border-radius: 8px;
   padding: 20px;
@@ -9,6 +9,7 @@
 .detail-article .detail-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  gap: 2rem;
 }
 
 .detail-article h2 {
@@ -44,4 +45,25 @@
 
 .detail-aside {
   text-align: center;
+}
+
+.aside-content h2 {
+  font-size: 16px;
+}
+
+.article-item-aside {
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 1rem;
+  background-color: #008080;
+  color: white;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+}
+
+.article-item-aside a {
+  text-decoration: none;
+  color: white;
 }

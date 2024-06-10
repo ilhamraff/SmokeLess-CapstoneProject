@@ -11,6 +11,18 @@ const createArticleCard = (article, id) => {
     </a>`;
 };
 
+const createArticleCardAside = (article, id) => {
+  const truncatedTitle =
+    article.title.length > 50
+      ? article.title.substring(0, 50) + " ..."
+      : article.title;
+  return `
+    <h2>${truncatedTitle}</h2>
+    <a href="/#/detail/${id}">Baca Selengkapnya  
+      <i class="fa fa-long-arrow-right"></i>
+    </a>`;
+};
+
 const createCommentItem = (comment) => {
   return `
   <div class="comment-item">
@@ -142,4 +154,5 @@ export {
   createBenefitsCard,
   createFormArticle,
   createDetailArticleSection,
+  createArticleCardAside,
 };

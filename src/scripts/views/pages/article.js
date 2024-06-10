@@ -25,8 +25,7 @@ const Article = {
 
   async afterRender() {
     try {
-      const articles = await ArticleSource.getArticle();
-      const articlesArray = Object.values(articles); // Ubah objek menjadi array
+      const articles = await ArticleSource.getArticle(); // Ubah objek menjadi array
       const articlesContainer = document.querySelector("#articles");
 
       for (const [id, article] of Object.entries(articles)) {

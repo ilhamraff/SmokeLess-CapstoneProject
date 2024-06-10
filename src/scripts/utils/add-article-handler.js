@@ -10,6 +10,8 @@ const AddArticleHandler = {
         },
         body: JSON.stringify(articleData),
       });
+      const data = await response.json();
+      return data;
     } catch (error) {
       console.error("Error Adding Article: ", error);
     }
