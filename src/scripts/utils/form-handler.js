@@ -1,6 +1,6 @@
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Swal from "sweetalert2";
-import AddArticleHandler from "./add-article-handler";
+import AddArticleHandler from "./article-handler";
 
 const formHandler = {
   async initializeCKEditor(selector) {
