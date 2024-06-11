@@ -1,3 +1,5 @@
+import swal from "sweetalert";
+
 const Survey = {
     async render() {
       return `
@@ -84,9 +86,9 @@ const Survey = {
             <p id="hasilKecanduan">Skor Anda: -</p>
           </section>
           
-          <section class="content" id="benefits">
-            <article class="benefits-content">
-              <div class="benefits-title">
+          <section class="content" id="benefits-survey">
+            <article class="surveys-content">
+              <div class="surveys-title">
                 <h1>Mengapa Penting Mengukur Kecanduan?</h1>
                 <p>
                   Mengetahui tingkat kecanduan Anda terhadap nikotin adalah langkah awal yang
@@ -94,27 +96,27 @@ const Survey = {
                   ketergantungan anda. Anda dapat mengikuti referensi sebagai berikut :
                 </p>
               </div>
-              <div class="benefits-container">
-                <div class="card-benefit">
+              <div class="surveys-container">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/strategi.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">
+                  <h3 class="surveys-title">
                     Menentukan<br />
                     Strategi Yang Tepat
                   </h3>
                 </div>
-                <div class="card-benefit">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/kesadaran.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">Meningkatkan<br />Kesadaran</h3>
+                  <h3 class="surveys-title">Meningkatkan<br />Kesadaran</h3>
                 </div>
-                <div class="card-benefit">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/berhenti.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
+                  <h3 class="surveys-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
                 </div>
               </div>
             </article>
@@ -150,11 +152,18 @@ const Survey = {
       });
     
       if (!allAnswered) {
-          alert('Harap isi semua pertanyaan.');
-          document.querySelector('input[name="' + firstUnanswered + '"]').scrollIntoView();
-          document.querySelector('input[name="' + firstUnanswered + '"]').focus();
-          return;
+        swal({
+            title: "Harap isi semua pertanyaan.",
+            text: "Silakan lengkapi semua pertanyaan yang belum dijawab.",
+            icon: "warning",
+            button: "OK",
+        }).then(() => {
+            document.querySelector('input[name="' + firstUnanswered + '"]').scrollIntoView();
+            document.querySelector('input[name="' + firstUnanswered + '"]').focus();
+        });
+        return;
       }
+
     
       var skor = 0;
     
@@ -177,14 +186,16 @@ const Survey = {
       }
 
       // Menghitung persentase
-   var persentase = (skor / 12) * 100;
+   var persentase = (skor / 9) * 100;
 
    // Menentukan warna progress bar berdasarkan tingkat kecanduan
    var barClass = "";
    if (skor <= 4) {
      barClass = "low";
-   } else if (skor <= 7) {
+   } else if (skor <= 4) {
      barClass = "medium";
+   } else if (skor <= 7) {
+     barClass = "medium";  
    } else {
      barClass = "high";
    }
