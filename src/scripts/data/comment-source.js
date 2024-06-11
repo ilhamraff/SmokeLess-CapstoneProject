@@ -1,6 +1,7 @@
-import API_ENDPOINT from "../globals/api-endpoint";
+import API_ENDPOINT from '../globals/api-endpoint';
 /**
- * CommentSource adalah kelas yang bertanggung jawab untuk mengambil data komentar dari server menggunakan API.
+ * CommentSource adalah kelas yang bertanggung jawab untuk
+ * mengambil data komentar dari server menggunakan API.
  */
 class CommentSource {
   /**

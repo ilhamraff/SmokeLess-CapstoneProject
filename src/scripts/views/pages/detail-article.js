@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-restricted-syntax */
 import ArticleSource from '../../data/article-source';
 import UrlParser from '../../routes/url-parser';
 import {
@@ -44,13 +46,16 @@ const Detail = {
         console.log(article);
         console.log(id);
         card.innerHTML = createArticleCardAside(article, id);
+
         card.addEventListener('click', () => {
           window.location.hash = `#/detail/${id}`;
         });
 
         articlesAsideContainer.appendChild(card);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   },
 };
 

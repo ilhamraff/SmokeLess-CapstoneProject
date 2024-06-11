@@ -1,6 +1,7 @@
-import API_ENDPOINT from "../globals/api-endpoint";
+import API_ENDPOINT from '../globals/api-endpoint';
 /**
- * ArticleSource adalah kelas yang bertanggung jawab untuk mengambil data artikel dari server menggunakan API.
+ * ArticleSource adalah kelas yang bertanggung jawab untuk
+ * mengambil data artikel dari server menggunakan API.
  */
 class ArticleSource {
   /**
@@ -20,7 +21,8 @@ class ArticleSource {
   /**
    * Mengambil detail artikel berdasarkan ID dari server.
    * @param {string} id - ID artikel yang ingin diambil detailnya.
-   * @returns {Promise<Object|null>} Objek yang berisi detail artikel atau null jika gagal mengambil.
+   * @returns {Promise<Object|null>} Objek yang berisi detail artikel
+   * atau null jika gagal mengambil.
    */
   static async getDetailArticle(id) {
     try {
@@ -28,7 +30,7 @@ class ArticleSource {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error("Error fetching article detail:", error);
+      console.error('Error fetching article detail:', error);
       return null;
     }
   }

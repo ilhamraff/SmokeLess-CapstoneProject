@@ -1,5 +1,6 @@
-import ArticleSource from "../../data/article-source";
-import { createArticleCard } from "../templates/template";
+/* eslint-disable no-restricted-syntax */
+import ArticleSource from '../../data/article-source';
+import { createArticleCard } from '../templates/template';
 
 const Article = {
   async render() {
@@ -26,25 +27,25 @@ const Article = {
   async afterRender() {
     try {
       const articles = await ArticleSource.getArticle(); // Ubah objek menjadi array
-      const articlesContainer = document.querySelector("#articles");
+      const articlesContainer = document.querySelector('#articles');
 
       for (const [id, article] of Object.entries(articles)) {
-        const card = document.createElement("div");
-        card.className = "article-item";
+        const card = document.createElement('div');
+        card.className = 'article-item';
         card.dataset.id = id;
         console.log(article);
         console.log(id);
 
         card.innerHTML = createArticleCard(article, id);
 
-        card.addEventListener("click", () => {
+        card.addEventListener('click', () => {
           window.location.hash = `#/detail/${id}`;
         });
 
         articlesContainer.appendChild(card);
       }
     } catch (error) {
-      console.error("Error rendering articles:", error);
+      console.error('Error rendering articles:', error);
     }
   },
 };

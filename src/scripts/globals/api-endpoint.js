@@ -1,7 +1,7 @@
 /**
  * API_ENDPOINT adalah objek yang berisi endpoint-endpoint API yang digunakan dalam aplikasi.
  */
-import CONFIG from "./config";
+import CONFIG from './config';
 
 const API_ENDPOINT = {
   /**

@@ -1,5 +1,5 @@
-import { createFormArticle } from "../templates/template";
-import formHandler from "../../utils/form-handler";
+import { createFormArticle } from '../templates/template';
+import formHandler from '../../utils/form-handler';
 
 const AddArticle = {
   async render() {
@@ -11,16 +11,16 @@ const AddArticle = {
 
   async afterRender() {
     try {
-      const formContainer = document.querySelector(".form-container");
+      const formContainer = document.querySelector('.form-container');
       formContainer.innerHTML += createFormArticle();
 
-      const bodyEditor = await formHandler.initializeCKEditor("#body");
+      const bodyEditor = await formHandler.initializeCKEditor('#body');
 
       formHandler.initializeFormHandling(bodyEditor);
 
       formHandler.initializeClearFormHandling(bodyEditor);
     } catch (error) {
-      console.error("Error rendering articles:", error);
+      console.error('Error rendering articles:', error);
     }
   },
 };

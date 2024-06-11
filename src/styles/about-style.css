@@ -1,11 +1,13 @@
 .about-us {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 70px;
+  padding: 100px;
   text-align: center;
 }
 
 .about-us .gambar {
+  margin-top: 50px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +28,7 @@
 .about-website {
   width: 100%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 70px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -35,24 +37,34 @@
 
 .about-website h1 {
   color: white;
+  font-size: 28px;
+  padding: 20px;
 }
 
 .about-website p {
   text-align: justify;
   color: white;
   line-height: 1.5;
+  padding: 25px;
+  font-size: 20px;
 }
 
 .about-dev {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 55px;
+  padding: 80px;
   text-align: center;
+}
+
+.about-dev h1 {
+  font-size: 28px;
+  padding: 20px;
 }
 
 .about-dev p {
   text-align: justify;
   line-height: 1.5;
+  padding: 25px;
+  font-size: 20px;
 }
 
 .about-dev .dev-container {
@@ -117,6 +129,6 @@
 }
 
 .dev-container .icon-picture img:hover {
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }

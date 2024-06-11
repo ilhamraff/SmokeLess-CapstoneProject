@@ -3,8 +3,10 @@
  */
 const UrlParser = {
   /**
-   * Mem-parsing URL aktif dengan menggunakan fungsi _urlSplitter untuk memecah URL menjadi bagian-bagian yang relevan,
-   * kemudian menggunakan _urlCombiner untuk menggabungkan kembali bagian-bagian tersebut menjadi URL yang sesuai.
+   * Mem-parsing URL aktif dengan menggunakan fungsi _urlSplitter
+   * untuk memecah URL menjadi bagian-bagian yang relevan,
+   * kemudian menggunakan _urlCombiner untuk menggabungkan kembali
+   * bagian-bagian tersebut menjadi URL yang sesuai.
    * @returns {string} URL yang telah di-parsing dan digabungkan.
    */
   parseActiveUrlWithCombiner() {
@@ -19,14 +21,14 @@ const UrlParser = {
    */
   parseActiveUrlWithoutCombiner() {
     const url = window.location.hash.slice(1);
-    const urlsSplits = url.split("/");
+    const urlsSplits = url.split('/');
 
     // Menggunakan `decodeURIComponent` untuk mempertahankan huruf besar kecil asli
     const id = decodeURIComponent(urlsSplits[2]) || null;
 
     return {
       resource: urlsSplits[1] || null,
-      id: id,
+      id,
       verb: urlsSplits[3] || null,
     };
   },
@@ -46,7 +48,8 @@ const UrlParser = {
   },
 
   /**
-   * Fungsi internal untuk menggabungkan kembali bagian-bagian URL yang telah di-parsing menjadi URL yang sesuai.
+   * Fungsi internal untuk menggabungkan kembali bagian-bagian
+   * URL yang telah di-parsing menjadi URL yang sesuai.
    * @param {Object} splitedUrl - Objek yang berisi bagian-bagian URL yang telah di-parsing.
    * @returns {string} URL yang telah di-gabungkan kembali.
    */

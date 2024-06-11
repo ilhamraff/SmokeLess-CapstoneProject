@@ -30,6 +30,8 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^41.4.2",
     "regenerator-runtime": "^0.14.1",
-    "sweetalert2": "^11.11.1"
+    "sweetalert2": "^11.11.1",
+    "sweetalert": "^2.1.2"
+
   }
 }

@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 const Survey = {
   async render() {
     return `
@@ -50,15 +52,15 @@ const Survey = {
               <input type="radio" name="occupation" value="0" /> Lainnya<br /><br />              
 
               <p>5. Berapa banyak Anda merokok dalam sehari?</p>
-              <input type="radio" name="q1" value="0" /> < 10 batang/hari<br />
-              <input type="radio" name="q1" value="1" /> 11-20 batang/hari<br />
-              <input type="radio" name="q1" value="2" /> 21-30 batang/hari<br />
-              <input type="radio" name="q1" value="3" /> >30 batang/hari<br /><br />
+              <input type="radio" name="q1" value="1" /> < 10 batang/hari<br />
+              <input type="radio" name="q1" value="2" /> 11-20 batang/hari<br />
+              <input type="radio" name="q1" value="3" /> 21-30 batang/hari<br />
+              <input type="radio" name="q1" value="4" /> >30 batang/hari<br /><br />
           
               <p>6. Seberapa cepat Anda merokok setelah bangun tidur?</p>
-              <input type="radio" name="q2" value="2" /> 5 menit setelah bangun tidur<br />
-              <input type="radio" name="q2" value="1" /> 6-30 menit setelah bangun tidur<br />
-              <input type="radio" name="q2" value="0" /> > 30 menit setelah bangun tidur<br /><br />
+              <input type="radio" name="q2" value="3" /> 5 menit setelah bangun tidur<br />
+              <input type="radio" name="q2" value="2" /> 6-30 menit setelah bangun tidur<br />
+              <input type="radio" name="q2" value="1" /> > 30 menit setelah bangun tidur<br /><br />
           
               <p>7. Apakah Anda merasa kesulitan untuk tidak merokok di “no smoking area”?</p>
               <input type="radio" name="q3" value="1" /> Ya<br />
@@ -85,8 +87,8 @@ const Survey = {
           </section>
           
           <section class="content" id="benefits-survey">
-            <article class="benefits-content">
-              <div class="benefits-title">
+            <article class="surveys-content">
+              <div class="surveys-title">
                 <h1>Mengapa Penting Mengukur Kecanduan?</h1>
                 <p>
                   Mengetahui tingkat kecanduan Anda terhadap nikotin adalah langkah awal yang
@@ -94,27 +96,27 @@ const Survey = {
                   ketergantungan anda. Anda dapat mengikuti referensi sebagai berikut :
                 </p>
               </div>
-              <div class="benefits-container">
-                <div class="card-benefit">
+              <div class="surveys-container">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/strategi.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">
+                  <h3 class="surveys-title">
                     Menentukan<br />
                     Strategi Yang Tepat
                   </h3>
                 </div>
-                <div class="card-benefit">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/kesadaran.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">Meningkatkan<br />Kesadaran</h3>
+                  <h3 class="surveys-title">Meningkatkan<br />Kesadaran</h3>
                 </div>
-                <div class="card-benefit">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/berhenti.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
+                  <h3 class="surveys-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
                 </div>
               </div>
             </article>
@@ -122,35 +124,24 @@ const Survey = {
   },
 
   async afterRender() {
-    const clearButton = document.querySelector(".clear");
-    clearButton.addEventListener("click", () => {
+    const clearButton = document.querySelector('.clear');
+    clearButton.addEventListener('click', () => {
       this.clearForm();
     });
 
-    const hitungButton = document.querySelector(".hitung");
-    hitungButton.addEventListener("click", () => {
+    const hitungButton = document.querySelector('.hitung');
+    hitungButton.addEventListener('click', () => {
       this.hitungKecanduan();
     });
   },
 
   hitungKecanduan() {
-    var questions = [
-      "age",
-      "gender",
-      "education",
-      "occupation",
-      "q1",
-      "q2",
-      "q3",
-      "q4",
-      "q5",
-      "q6",
-    ];
-    var allAnswered = true;
-    var firstUnanswered = null;
+    const questions = ['age', 'gender', 'education', 'occupation', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
+    let allAnswered = true;
+    let firstUnanswered = null;
 
-    questions.forEach(function (question) {
-      if (!document.querySelector('input[name="' + question + '"]:checked')) {
+    questions.forEach((question) => {
+      if (!document.querySelector(`input[name="${question}"]:checked`)) {
         allAnswered = false;
         if (!firstUnanswered) {
           firstUnanswered = question;
@@ -159,79 +150,81 @@ const Survey = {
     });
 
     if (!allAnswered) {
-      alert("Harap isi semua pertanyaan.");
-      document
-        .querySelector('input[name="' + firstUnanswered + '"]')
-        .scrollIntoView();
-      document.querySelector('input[name="' + firstUnanswered + '"]').focus();
+      swal({
+        title: 'Harap isi semua pertanyaan.',
+        text: 'Silakan lengkapi semua pertanyaan yang belum dijawab.',
+        icon: 'warning',
+        button: 'OK',
+      }).then(() => {
+        document.querySelector(`input[name="${firstUnanswered}"]`).scrollIntoView();
+        document.querySelector(`input[name="${firstUnanswered}"]`).focus();
+      });
       return;
     }
 
-    var skor = 0;
+    let skor = 0;
 
     // Mengambil nilai dari jawaban yang dipilih
-    questions.forEach(function (question) {
-      skor += parseInt(
-        document.querySelector('input[name="' + question + '"]:checked').value
-      );
+    questions.forEach((question) => {
+      skor += parseInt(document.querySelector(`input[name="${question}"]:checked`).value);
     });
 
     // Menentukan tingkat kecanduan berdasarkan skor
-    var tingkatKecanduan = "";
+    let tingkatKecanduan = '';
 
     if (skor <= 2) {
-      tingkatKecanduan = "Ketergantungan rendah";
+      tingkatKecanduan = 'Ketergantungan rendah';
     } else if (skor <= 4) {
-      tingkatKecanduan = "Ketergantungan rendah sampai sedang";
+      tingkatKecanduan = 'Ketergantungan rendah sampai sedang';
     } else if (skor <= 7) {
-      tingkatKecanduan = "Ketergantungan sedang";
+      tingkatKecanduan = 'Ketergantungan sedang';
     } else {
-      tingkatKecanduan = "Ketergantungan tinggi";
+      tingkatKecanduan = 'Ketergantungan tinggi';
     }
 
     // Menghitung persentase
-    var persentase = (skor / 12) * 100;
+    const persentase = (skor / 11) * 100;
 
     // Menentukan warna progress bar berdasarkan tingkat kecanduan
-    var barClass = "";
-    if (skor <= 4) {
-      barClass = "low";
+    let barClass = '';
+    if (skor <= 2) {
+      barClass = 'low';
+    } else if (skor <= 4) {
+      barClass = 'medium';
     } else if (skor <= 7) {
-      barClass = "medium";
+      barClass = 'medium';
     } else {
-      barClass = "high";
+      barClass = 'high';
     }
 
     // Menampilkan hasil dengan progress bar
-    var progressBar = `<div class="progress-container">
+    const progressBar = `<div class="progress-container">
                         <div class="progress-bar ${barClass}" style="width: ${persentase}%">
                             ${persentase.toFixed(2)}%
                         </div>
                     </div>`;
 
     // Menampilkan hasil
-    document.getElementById("hasilKecanduan").innerHTML =
-      "Skor Anda: " +
-      skor +
-      " - " +
-      tingkatKecanduan +
-      " (" +
-      persentase.toFixed(2) +
-      "%)<br>" +
-      progressBar;
+    document.getElementById('hasilKecanduan').innerHTML = `Skor Anda: ${
+      skor
+    } - ${
+      tingkatKecanduan
+    } (${
+      persentase.toFixed(2)
+    }%)<br>${
+      progressBar}`;
   },
 
   clearForm() {
     // Menghapus semua pilihan jawaban
-    document
-      .querySelectorAll('input[type="radio"],input[type="checkbox"]')
-      .forEach((radio) => {
-        radio.checked = false;
-      });
+    document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach((radio) => {
+      radio.checked = false;
+    });
 
     // Menghapus hasil kecanduan
-    document.getElementById("hasilKecanduan").innerHTML = "Skor Anda: -";
+    document.getElementById('hasilKecanduan').innerHTML = 'Skor Anda: -';
   },
+
 };
 
 export default Survey;

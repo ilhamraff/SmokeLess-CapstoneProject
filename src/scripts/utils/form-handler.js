@@ -1,6 +1,6 @@
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import Swal from "sweetalert2";
-import AddArticleHandler from "./article-handler";
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Swal from 'sweetalert2';
+import AddArticleHandler from './article-handler';
 
 /**
  * formHandler adalah objek yang bertanggung jawab untuk menginisialisasi CKEditor,
@@ -18,42 +18,42 @@ const formHandler = {
         document.querySelector(selector),
         {
           toolbar: [
-            "undo",
-            "redo",
-            "heading",
-            "bold",
-            "italic",
-            "link",
-            "bulletedList",
-            "numberedList",
-            "blockQuote",
+            'undo',
+            'redo',
+            'heading',
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            'blockQuote',
           ],
           heading: {
             options: [
               {
-                model: "paragraph",
-                title: "Paragraph",
-                class: "ck-heading_paragraph",
+                model: 'paragraph',
+                title: 'Paragraph',
+                class: 'ck-heading_paragraph',
               },
               {
-                model: "heading1",
-                view: "h1",
-                title: "Heading 1",
-                class: "ck-heading_heading1",
+                model: 'heading1',
+                view: 'h1',
+                title: 'Heading 1',
+                class: 'ck-heading_heading1',
               },
               {
-                model: "heading2",
-                view: "h2",
-                title: "Heading 2",
-                class: "ck-heading_heading2",
+                model: 'heading2',
+                view: 'h2',
+                title: 'Heading 2',
+                class: 'ck-heading_heading2',
               },
             ],
           },
-        }
+        },
       );
       return editor;
     } catch (error) {
-      console.error("There was a problem initializing the editor.", error);
+      console.error('There was a problem initializing the editor.', error);
     }
   },
 
@@ -63,19 +63,19 @@ const formHandler = {
    */
   initializeFormHandling(bodyEditor) {
     try {
-      const addArticleForm = document.getElementById("article-form");
-      addArticleForm.addEventListener("submit", async (event) => {
+      const addArticleForm = document.getElementById('article-form');
+      addArticleForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const articleAuthor = document.getElementById("author").value;
-        const articleTitle = document.getElementById("title").value;
+        const articleAuthor = document.getElementById('author').value;
+        const articleTitle = document.getElementById('title').value;
         const articleBody = bodyEditor.getData();
-        const date = new Date().toISOString().split("T")[0];
+        const date = new Date().toISOString().split('T')[0];
 
         if (!articleAuthor || !articleTitle || !articleBody) {
           return Swal.fire({
-            icon: "error",
-            title: "Harap Isi Semua Kolom",
+            icon: 'error',
+            title: 'Harap Isi Semua Kolom',
           });
         }
 
@@ -87,12 +87,12 @@ const formHandler = {
         };
 
         const { isConfirmed } = await Swal.fire({
-          title: "Konfirmasi?",
-          text: "Kamu yakin mau Menambah Artikel ini?",
-          icon: "question",
+          title: 'Konfirmasi?',
+          text: 'Kamu yakin mau Menambah Artikel ini?',
+          icon: 'question',
           showCancelButton: true,
-          confirmButtonText: "Ya",
-          cancelButtonText: "Batal",
+          confirmButtonText: 'Ya',
+          cancelButtonText: 'Batal',
         });
 
         if (!isConfirmed) {
@@ -105,15 +105,15 @@ const formHandler = {
           if (data && data.name) {
             AddArticleHandler.renderArticle(articleData);
           } else {
-            console.error("Unexpected data format:", data);
+            console.error('Unexpected data format:', data);
           }
         } catch (error) {
-          console.error("Error:", error);
+          console.error('Error:', error);
         }
 
         const Toast = Swal.mixin({
           toast: true,
-          position: "top-end",
+          position: 'top-end',
           showConfirmButton: false,
           timer: 2000,
           timerProgressBar: true,
@@ -123,15 +123,15 @@ const formHandler = {
           },
         });
         Toast.fire({
-          icon: "success",
-          title: "Berhasil Menambah Artikel",
+          icon: 'success',
+          title: 'Berhasil Menambah Artikel',
         });
 
         addArticleForm.reset();
-        bodyEditor.setData("");
+        bodyEditor.setData('');
       });
     } catch (error) {
-      console.error("Error Adding Data", error);
+      console.error('Error Adding Data', error);
     }
   },
 
@@ -140,12 +140,12 @@ const formHandler = {
    * @param {Object} bodyEditor - Objek CKEditor untuk konten artikel.
    */
   initializeClearFormHandling(bodyEditor) {
-    const clearForm = document.getElementById("clear");
+    const clearForm = document.getElementById('clear');
 
-    clearForm.addEventListener("click", () => {
-      document.getElementById("author").value = "";
-      document.getElementById("title").value = "";
-      bodyEditor.setData("");
+    clearForm.addEventListener('click', () => {
+      document.getElementById('author').value = '';
+      document.getElementById('title').value = '';
+      bodyEditor.setData('');
     });
   },
 };
