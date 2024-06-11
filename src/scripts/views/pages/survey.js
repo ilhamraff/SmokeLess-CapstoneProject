@@ -94,27 +94,27 @@ const Survey = {
                   ketergantungan anda. Anda dapat mengikuti referensi sebagai berikut :
                 </p>
               </div>
-              <div class="benefits-container">
-                <div class="card-benefit">
+              <div class="surveys-container">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/strategi.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">
+                  <h3 class="surveys-title">
                     Menentukan<br />
                     Strategi Yang Tepat
                   </h3>
                 </div>
-                <div class="card-benefit">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/kesadaran.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">Meningkatkan<br />Kesadaran</h3>
+                  <h3 class="surveys-title">Meningkatkan<br />Kesadaran</h3>
                 </div>
-                <div class="card-benefit">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/berhenti.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
+                  <h3 class="surveys-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
                 </div>
               </div>
             </article>

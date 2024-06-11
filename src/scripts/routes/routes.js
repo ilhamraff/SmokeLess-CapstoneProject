@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 /**
  * routes adalah objek yang memetakan URL path ke komponen halaman yang sesuai.
  */

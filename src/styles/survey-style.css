@@ -38,19 +38,16 @@ body {
 
 /* Button Styling */
 button {
-  background-color: #008080;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px 5px;
-  margin-top: 20px;
-  cursor: pointer;
-  border-radius: 12px;
-  transition: background-color 0.3s, transform 0.3s;
+    background-color: #008080;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
@@ -90,57 +87,57 @@ button:active {
  * benefits-content
  */
 
-#benefits-survey {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
+ #benefits-survey {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .surveys-content {
+    color: black;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .surveys-content .surveys-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
 
-#benefits-survey .benefits-content {
-  color: black;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-#benefits-survey .benefits-content .benefits-title {
-  font-size: 20px;
-  margin-bottom: 30px;
-}
-
-#benefits-survey .benefits-title p {
-  margin-top: 20px;
-}
-
-#benefits-survey .benefits-content .benefits-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-}
-
-#benefits-survey .benefits-content .card-benefit {
-  background: white;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-  background-color: #008080;
-  transition: all 0.3s ease;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-
-#benefits-survey .benefits-content .card-benefit:hover {
-  transform: translateY(-10px);
-}
-
-#benefits-survey .benefits-content .user-picture img {
-  max-width: 120px;
-  height: auto;
-  text-align: center;
-  margin-top: 10px;
-}
+  .surveys-title p {
+    margin-top: 20px;
+  }
+  
+  .surveys-content .surveys-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+  
+  .surveys-content .card-survey {
+    background: white;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    background-color: #008080;
+    transition: all 0.3s ease;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+  
+  .surveys-content .card-survey:hover {
+    transform: translateY(-10px);
+  }
+  
+  .surveys-content .user-picture img {
+    max-width: 120px;
+    height: auto;
+    text-align: center;
+    margin-top: 10px;
+  }
 
 /*progress bar*/
 
