@@ -2,7 +2,16 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Swal from "sweetalert2";
 import AddArticleHandler from "./article-handler";
 
+/**
+ * formHandler adalah objek yang bertanggung jawab untuk menginisialisasi CKEditor,
+ * menangani pengiriman form artikel, dan menangani pengosongan form.
+ */
 const formHandler = {
+  /**
+   * Menginisialisasi CKEditor pada elemen yang ditentukan oleh selector.
+   * @param {string} selector - Selektor CSS untuk elemen yang akan diinisialisasi CKEditor.
+   * @returns {Promise<Object>} Objek editor yang diinisialisasi.
+   */
   async initializeCKEditor(selector) {
     try {
       const editor = await ClassicEditor.create(
@@ -48,6 +57,10 @@ const formHandler = {
     }
   },
 
+  /**
+   * Menginisialisasi penanganan form artikel, termasuk validasi dan pengiriman data artikel.
+   * @param {Object} bodyEditor - Objek CKEditor untuk konten artikel.
+   */
   initializeFormHandling(bodyEditor) {
     try {
       const addArticleForm = document.getElementById("article-form");
@@ -122,6 +135,10 @@ const formHandler = {
     }
   },
 
+  /**
+   * Menginisialisasi penanganan pengosongan form artikel.
+   * @param {Object} bodyEditor - Objek CKEditor untuk konten artikel.
+   */
   initializeClearFormHandling(bodyEditor) {
     const clearForm = document.getElementById("clear");
 
