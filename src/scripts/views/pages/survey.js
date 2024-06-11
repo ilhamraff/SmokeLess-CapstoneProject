@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 const Survey = {
   async render() {
     return `
@@ -50,15 +52,15 @@ const Survey = {
               <input type="radio" name="occupation" value="0" /> Lainnya<br /><br />              
 
               <p>5. Berapa banyak Anda merokok dalam sehari?</p>
-              <input type="radio" name="q1" value="0" /> < 10 batang/hari<br />
-              <input type="radio" name="q1" value="1" /> 11-20 batang/hari<br />
-              <input type="radio" name="q1" value="2" /> 21-30 batang/hari<br />
-              <input type="radio" name="q1" value="3" /> >30 batang/hari<br /><br />
+              <input type="radio" name="q1" value="1" /> < 10 batang/hari<br />
+              <input type="radio" name="q1" value="2" /> 11-20 batang/hari<br />
+              <input type="radio" name="q1" value="3" /> 21-30 batang/hari<br />
+              <input type="radio" name="q1" value="4" /> >30 batang/hari<br /><br />
           
               <p>6. Seberapa cepat Anda merokok setelah bangun tidur?</p>
-              <input type="radio" name="q2" value="2" /> 5 menit setelah bangun tidur<br />
-              <input type="radio" name="q2" value="1" /> 6-30 menit setelah bangun tidur<br />
-              <input type="radio" name="q2" value="0" /> > 30 menit setelah bangun tidur<br /><br />
+              <input type="radio" name="q2" value="3" /> 5 menit setelah bangun tidur<br />
+              <input type="radio" name="q2" value="2" /> 6-30 menit setelah bangun tidur<br />
+              <input type="radio" name="q2" value="1" /> > 30 menit setelah bangun tidur<br /><br />
           
               <p>7. Apakah Anda merasa kesulitan untuk tidak merokok di “no smoking area”?</p>
               <input type="radio" name="q3" value="1" /> Ya<br />
@@ -85,8 +87,8 @@ const Survey = {
           </section>
           
           <section class="content" id="benefits-survey">
-            <article class="benefits-content">
-              <div class="benefits-title">
+            <article class="surveys-content">
+              <div class="surveys-title">
                 <h1>Mengapa Penting Mengukur Kecanduan?</h1>
                 <p>
                   Mengetahui tingkat kecanduan Anda terhadap nikotin adalah langkah awal yang
@@ -134,18 +136,7 @@ const Survey = {
   },
 
   hitungKecanduan() {
-    const questions = [
-      'age',
-      'gender',
-      'education',
-      'occupation',
-      'q1',
-      'q2',
-      'q3',
-      'q4',
-      'q5',
-      'q6',
-    ];
+    const questions = ['age', 'gender', 'education', 'occupation', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
     let allAnswered = true;
     let firstUnanswered = null;
 
@@ -159,11 +150,15 @@ const Survey = {
     });
 
     if (!allAnswered) {
-      alert('Harap isi semua pertanyaan.');
-      document
-        .querySelector(`input[name="${firstUnanswered}"]`)
-        .scrollIntoView();
-      document.querySelector(`input[name="${firstUnanswered}"]`).focus();
+      swal({
+        title: 'Harap isi semua pertanyaan.',
+        text: 'Silakan lengkapi semua pertanyaan yang belum dijawab.',
+        icon: 'warning',
+        button: 'OK',
+      }).then(() => {
+        document.querySelector(`input[name="${firstUnanswered}"]`).scrollIntoView();
+        document.querySelector(`input[name="${firstUnanswered}"]`).focus();
+      });
       return;
     }
 
@@ -171,9 +166,7 @@ const Survey = {
 
     // Mengambil nilai dari jawaban yang dipilih
     questions.forEach((question) => {
-      skor += parseInt(
-        document.querySelector(`input[name="${question}"]:checked`).value,
-      );
+      skor += parseInt(document.querySelector(`input[name="${question}"]:checked`).value);
     });
 
     // Menentukan tingkat kecanduan berdasarkan skor
@@ -190,12 +183,14 @@ const Survey = {
     }
 
     // Menghitung persentase
-    const persentase = (skor / 12) * 100;
+    const persentase = (skor / 11) * 100;
 
     // Menentukan warna progress bar berdasarkan tingkat kecanduan
     let barClass = '';
-    if (skor <= 4) {
+    if (skor <= 2) {
       barClass = 'low';
+    } else if (skor <= 4) {
+      barClass = 'medium';
     } else if (skor <= 7) {
       barClass = 'medium';
     } else {
@@ -222,15 +217,14 @@ const Survey = {
 
   clearForm() {
     // Menghapus semua pilihan jawaban
-    document
-      .querySelectorAll('input[type="radio"],input[type="checkbox"]')
-      .forEach((radio) => {
-        radio.checked = false;
-      });
+    document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach((radio) => {
+      radio.checked = false;
+    });
 
     // Menghapus hasil kecanduan
     document.getElementById('hasilKecanduan').innerHTML = 'Skor Anda: -';
   },
+
 };
 
 export default Survey;
