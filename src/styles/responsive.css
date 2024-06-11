@@ -2,6 +2,9 @@
   .menu li {
     margin-right: 5px;
   }
+  .survey-description .content-one{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -29,6 +32,19 @@
     flex-direction: column;
   }
 
+  .form-section form {
+      width: 100%;
+      max-width: 400px;
+      min-width: 300px;
+  }
+
+  .benefits-container {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-container {
+    width: 70%;
+  }
   .footer-top {
     flex-direction: column;
     gap: 30px;

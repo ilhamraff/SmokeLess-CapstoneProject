@@ -8,6 +8,7 @@ import "../styles/add-article-style.css";
 import "../styles/about-style.css";
 import "../styles/about-responsive.css";
 import "../styles/detail-style.css";
+import "../styles/survey-style.css"
 import App from "./views/app";
 
 const app = new App({
