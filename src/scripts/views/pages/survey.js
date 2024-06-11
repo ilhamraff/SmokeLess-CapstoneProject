@@ -84,7 +84,7 @@ const Survey = {
             <p id="hasilKecanduan">Skor Anda: -</p>
           </section>
           
-          <section class="content" id="benefits">
+          <section class="content" id="benefits-survey">
             <article class="benefits-content">
               <div class="benefits-title">
                 <h1>Mengapa Penting Mengukur Kecanduan?</h1>

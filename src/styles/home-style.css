@@ -122,6 +122,7 @@
 .smoking-disease h1 {
   font-size: 28px;
   color: #008080;
+  margin-bottom: 30px;
 }
 
 .smoking-disease .disease-container {
@@ -130,6 +131,8 @@
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
+  gap: 25px;
+  margin-bottom: 20px;
 }
 
 .smoking-disease .disease-container:hover {
@@ -140,11 +143,12 @@
   background-color: #008080;
   color: white;
   border-radius: 20px;
+  padding: 15px;
+  justify-items: start;
 }
 
 .smoking-disease .disease-container .disease-body {
   text-align: left;
-  padding-left: 20px;
 }
 
 /**
@@ -204,6 +208,10 @@
   margin: 0 auto;
 }
 
+.comments-container h1 {
+  margin-bottom: 20px;
+}
+
 .comments-container .commentbox {
   display: flex;
   margin-bottom: 2rem;
@@ -218,6 +226,10 @@
 
 .form-content {
   flex-grow: 1;
+}
+
+.form-content h2 {
+  margin-bottom: 20px;
 }
 
 .comment-form input,
@@ -241,8 +253,13 @@ textarea {
   padding: 10px 30px;
   font-size: 1rem;
   cursor: pointer;
+  margin: 0;
 }
 
 .comment-list {
   display: flex;
+}
+
+.comment-item {
+  margin-bottom: 20px;
 }
