@@ -122,35 +122,35 @@ const Survey = {
   },
 
   async afterRender() {
-    const clearButton = document.querySelector(".clear");
-    clearButton.addEventListener("click", () => {
+    const clearButton = document.querySelector('.clear');
+    clearButton.addEventListener('click', () => {
       this.clearForm();
     });
 
-    const hitungButton = document.querySelector(".hitung");
-    hitungButton.addEventListener("click", () => {
+    const hitungButton = document.querySelector('.hitung');
+    hitungButton.addEventListener('click', () => {
       this.hitungKecanduan();
     });
   },
 
   hitungKecanduan() {
-    var questions = [
-      "age",
-      "gender",
-      "education",
-      "occupation",
-      "q1",
-      "q2",
-      "q3",
-      "q4",
-      "q5",
-      "q6",
+    const questions = [
+      'age',
+      'gender',
+      'education',
+      'occupation',
+      'q1',
+      'q2',
+      'q3',
+      'q4',
+      'q5',
+      'q6',
     ];
-    var allAnswered = true;
-    var firstUnanswered = null;
+    let allAnswered = true;
+    let firstUnanswered = null;
 
-    questions.forEach(function (question) {
-      if (!document.querySelector('input[name="' + question + '"]:checked')) {
+    questions.forEach((question) => {
+      if (!document.querySelector(`input[name="${question}"]:checked`)) {
         allAnswered = false;
         if (!firstUnanswered) {
           firstUnanswered = question;
@@ -159,66 +159,65 @@ const Survey = {
     });
 
     if (!allAnswered) {
-      alert("Harap isi semua pertanyaan.");
+      alert('Harap isi semua pertanyaan.');
       document
-        .querySelector('input[name="' + firstUnanswered + '"]')
+        .querySelector(`input[name="${firstUnanswered}"]`)
         .scrollIntoView();
-      document.querySelector('input[name="' + firstUnanswered + '"]').focus();
+      document.querySelector(`input[name="${firstUnanswered}"]`).focus();
       return;
     }
 
-    var skor = 0;
+    let skor = 0;
 
     // Mengambil nilai dari jawaban yang dipilih
-    questions.forEach(function (question) {
+    questions.forEach((question) => {
       skor += parseInt(
-        document.querySelector('input[name="' + question + '"]:checked').value
+        document.querySelector(`input[name="${question}"]:checked`).value,
       );
     });
 
     // Menentukan tingkat kecanduan berdasarkan skor
-    var tingkatKecanduan = "";
+    let tingkatKecanduan = '';
 
     if (skor <= 2) {
-      tingkatKecanduan = "Ketergantungan rendah";
+      tingkatKecanduan = 'Ketergantungan rendah';
     } else if (skor <= 4) {
-      tingkatKecanduan = "Ketergantungan rendah sampai sedang";
+      tingkatKecanduan = 'Ketergantungan rendah sampai sedang';
     } else if (skor <= 7) {
-      tingkatKecanduan = "Ketergantungan sedang";
+      tingkatKecanduan = 'Ketergantungan sedang';
     } else {
-      tingkatKecanduan = "Ketergantungan tinggi";
+      tingkatKecanduan = 'Ketergantungan tinggi';
     }
 
     // Menghitung persentase
-    var persentase = (skor / 12) * 100;
+    const persentase = (skor / 12) * 100;
 
     // Menentukan warna progress bar berdasarkan tingkat kecanduan
-    var barClass = "";
+    let barClass = '';
     if (skor <= 4) {
-      barClass = "low";
+      barClass = 'low';
     } else if (skor <= 7) {
-      barClass = "medium";
+      barClass = 'medium';
     } else {
-      barClass = "high";
+      barClass = 'high';
     }
 
     // Menampilkan hasil dengan progress bar
-    var progressBar = `<div class="progress-container">
+    const progressBar = `<div class="progress-container">
                         <div class="progress-bar ${barClass}" style="width: ${persentase}%">
                             ${persentase.toFixed(2)}%
                         </div>
                     </div>`;
 
     // Menampilkan hasil
-    document.getElementById("hasilKecanduan").innerHTML =
-      "Skor Anda: " +
-      skor +
-      " - " +
-      tingkatKecanduan +
-      " (" +
-      persentase.toFixed(2) +
-      "%)<br>" +
-      progressBar;
+    document.getElementById('hasilKecanduan').innerHTML = `Skor Anda: ${
+      skor
+    } - ${
+      tingkatKecanduan
+    } (${
+      persentase.toFixed(2)
+    }%)<br>${
+      progressBar}`;
   },
 
   clearForm() {
@@ -230,7 +229,7 @@ const Survey = {
       });
 
     // Menghapus hasil kecanduan
-    document.getElementById("hasilKecanduan").innerHTML = "Skor Anda: -";
+    document.getElementById('hasilKecanduan').innerHTML = 'Skor Anda: -';
   },
 };
 

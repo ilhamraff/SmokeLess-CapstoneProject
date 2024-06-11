@@ -1,5 +1,6 @@
 /**
- * HomeSource adalah kelas yang bertanggung jawab untuk mengambil data yang berkaitan dengan halaman utama dari server.
+ * HomeSource adalah kelas yang bertanggung jawab untuk mengambil
+ * data yang berkaitan dengan halaman utama dari server.
  */
 class HomeSource {
   /**

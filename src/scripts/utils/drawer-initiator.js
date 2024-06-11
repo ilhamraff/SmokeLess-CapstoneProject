@@ -1,5 +1,7 @@
+/* eslint-disable max-len */
 /**
- * DrawerInitiator adalah objek yang bertanggung jawab untuk menginisialisasi fungsi pembuka dan penutup drawer (menu geser).
+ * DrawerInitiator adalah objek yang bertanggung jawab untuk
+ * menginisialisasi fungsi pembuka dan penutup drawer (menu geser).
  */
 const DrawerInitiator = {
   /**
@@ -10,11 +12,11 @@ const DrawerInitiator = {
    * @param {HTMLElement} config.content - Elemen konten utama yang digunakan untuk menutup drawer ketika diklik.
    */
   init({ button, drawer, content }) {
-    button.addEventListener("click", (event) => {
+    button.addEventListener('click', (event) => {
       this._toggleDrawer(event, drawer);
     });
 
-    content.addEventListener("click", (event) => {
+    content.addEventListener('click', (event) => {
       this._closeDrawer(event, drawer);
     });
   },
@@ -26,7 +28,7 @@ const DrawerInitiator = {
    */
   _toggleDrawer(event, drawer) {
     event.stopPropagation();
-    drawer.classList.toggle("aktif");
+    drawer.classList.toggle('aktif');
   },
 
   /**
@@ -36,7 +38,7 @@ const DrawerInitiator = {
    */
   _closeDrawer(event, drawer) {
     event.stopPropagation();
-    drawer.classList.remove("aktif");
+    drawer.classList.remove('aktif');
   },
 };
 

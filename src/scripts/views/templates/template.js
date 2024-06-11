@@ -1,8 +1,7 @@
 const createArticleCard = (article, id) => {
-  const truncatedContent =
-    article.content.length > 100
-      ? article.content.substring(0, 100) + " ..."
-      : article.content;
+  const truncatedContent = article.content.length > 100
+    ? `${article.content.substring(0, 100)} ...`
+    : article.content;
   return `
     <h2>${article.title}</h2>
     <p>${truncatedContent}</p>
@@ -12,10 +11,9 @@ const createArticleCard = (article, id) => {
 };
 
 const createArticleCardAside = (article, id) => {
-  const truncatedTitle =
-    article.title.length > 50
-      ? article.title.substring(0, 50) + " ..."
-      : article.title;
+  const truncatedTitle = article.title.length > 50
+    ? `${article.title.substring(0, 50)} ...`
+    : article.title;
   return `
     <h2>${truncatedTitle}</h2>
     <a href="/#/detail/${id}">Baca Selengkapnya  
@@ -23,14 +21,12 @@ const createArticleCardAside = (article, id) => {
     </a>`;
 };
 
-const createCommentItem = (comment) => {
-  return `
+const createCommentItem = (comment) => `
   <div class="comment-item">
     <h4>${comment.name}</h4>
     <p>${comment.comment}</p>
     <p>${comment.date}</p>
   </div>`;
-};
 const createCommentSection = () => `
   <article class="comments-container hidden">
     <h1>Post A Comment</h1>
@@ -123,13 +119,13 @@ const createFormArticle = () => `
 
 const createDetailArticleSection = (article) => `
   <div class="article-detail">
-    <h2 class="article-title">${article.title || "Title not available"}</h2>
+    <h2 class="article-title">${article.title || 'Title not available'}</h2>
     <div class="article-author">by ${
-      article.author || "Author not available"
-    }</div>
-    <div class="article-date">${article.createdAt || "Date not available"}</div>
+  article.author || 'Author not available'
+}</div>
+    <div class="article-date">${article.createdAt || 'Date not available'}</div>
     <div class="article-body">
-      <p>${article.content || "Content not available"}</p>
+      <p>${article.content || 'Content not available'}</p>
     </div>
   </div>
 `;
