@@ -12,15 +12,15 @@ import "../styles/survey-style.css"
 import App from "./views/app";
 
 const app = new App({
-  button: document.querySelector(".tombol"),
-  drawer: document.querySelector(".menu"),
-  content: document.querySelector("#mainContent"),
+  button: document.querySelector('.tombol'),
+  drawer: document.querySelector('.menu'),
+  content: document.querySelector('#mainContent'),
 });
 
-window.addEventListener("hashchange", () => {
+window.addEventListener('hashchange', () => {
   app.renderPage();
 });
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   app.renderPage();
 });

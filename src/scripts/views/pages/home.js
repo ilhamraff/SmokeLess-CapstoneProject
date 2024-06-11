@@ -110,7 +110,7 @@ const Home = {
         const commentData = {
           name: comentatorName,
           comment: comentatorComment,
-          date: date,
+          date,
         };
 
         try {

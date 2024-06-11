@@ -31,9 +31,7 @@ const createCommentItem = (comment) => {
     <p>${comment.date}</p>
   </div>`;
 };
-
-const createCommentSection = () => {
-  return `
+const createCommentSection = () => `
   <article class="comments-container hidden">
     <h1>Post A Comment</h1>
     <div class="commentbox">
@@ -62,10 +60,8 @@ const createCommentSection = () => {
       <div class="comments-detail" id="comment-list"></div>
     </div>
   </article>`;
-};
 
-const crateCigaretteContentCard = (content) => {
-  return `
+const crateCigaretteContentCard = (content) => `
     <div class="card">
       <img src="${content.img}" alt="Avatar" style="width: 100%" />
       <div class="container">
@@ -73,10 +69,8 @@ const crateCigaretteContentCard = (content) => {
       </div>
     </div>                
   `;
-};
 
-const createDiseaseContainer = (disease) => {
-  return `
+const createDiseaseContainer = (disease) => `
   <div class="disease-container">
     <div class="disease-title">
       <h3>${disease.title}</h3>
@@ -85,20 +79,16 @@ const createDiseaseContainer = (disease) => {
       <p>${disease.body}</p>
     </div>
   </div>`;
-};
 
-const createBenefitsCard = (benefit) => {
-  return `
+const createBenefitsCard = (benefit) => `
   <div class="card-benefit">
     <div class="user-picture">
       <img src="${benefit.img}" alt="" />
     </div>
     <h3 class="benefits-title">${benefit.title}</h3>
   </div>`;
-};
 
-const createFormArticle = () => {
-  return `
+const createFormArticle = () => `
   <form action="" id="article-form">
       <h2>Buat Artikel</h2>
       <div class="form-component">
@@ -130,7 +120,6 @@ const createFormArticle = () => {
       </div>
   </form>
   `;
-};
 
 const createDetailArticleSection = (article) => `
   <div class="article-detail">
