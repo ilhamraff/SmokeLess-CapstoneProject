@@ -14,11 +14,13 @@
 .content-description .title {
   color: #008080;
   margin-block: 1rem;
-  font-size: 32px;
+  font-size: 56px;
 }
 
 .content-description p {
   line-height: 1.7rem;
+  margin-bottom: 40px;
+  font-size: 18px;
 }
 
 .content-description a {
@@ -31,11 +33,6 @@
   color: white;
   cursor: pointer;
   transition: all 0.15s ease-in;
-}
-
-.content-description a i {
-  margin-left: 10px;
-  margin-top: 20px;
 }
 
 .content-description a:hover {
@@ -254,6 +251,11 @@ textarea {
   font-size: 1rem;
   cursor: pointer;
   margin: 0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.comment-form button:hover {
+    transform: scale(1.05);
 }
 
 .comment-list {

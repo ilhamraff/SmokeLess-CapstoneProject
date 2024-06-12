@@ -16,13 +16,12 @@ const Home = {
     <section class="content" id="welcome">
         <article class="welcome-content">
           <div class="content-description">
-            <h1 class="title">SELAMAT DATANG</h1>
+            <h1 class="title">Selamat Datang</h1>
             <p>
               Bersama Kami Berhenti Merokok<br />
               dan Menuju Hidup yang Lebih Sehat
             </p>
-            <a href="#cigarette">Baca Selengkapnya  
-              <i class="fa fa-long-arrow-right"></i>
+            <a href="#cigarette">Baca Selengkapnya
             </a>
           </div>
           <div class="content-image">

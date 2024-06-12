@@ -8,6 +8,12 @@ const CONFIG = {
    * @type {string}
    */
   BASE_URL: 'https://smokeless-web-default-rtdb.firebaseio.com/',
+
+  /**
+   * Nama cache yang digunakan dalam aplikasi.
+   * @type {string}
+   */
+  CACHE_NAME: 'SmokelessWeb-V1',
 };
 
 export default CONFIG;

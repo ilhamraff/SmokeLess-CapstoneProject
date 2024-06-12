@@ -82,6 +82,7 @@ main {
 .content {
   padding: 32px;
   margin: 0;
+  width: 100%;
 }
 
 /**
@@ -90,10 +91,10 @@ main {
 
 .footer {
   background-color: #008080;
+  width: 100%;
 }
 
 .footer-top {
-  box-sizing: border-box;
   width: 100%;
   margin: auto;
   text-align: left;

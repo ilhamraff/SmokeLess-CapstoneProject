@@ -33,8 +33,6 @@ const Article = {
         const card = document.createElement('div');
         card.className = 'article-item';
         card.dataset.id = id;
-        console.log(article);
-        console.log(id);
 
         card.innerHTML = createArticleCard(article, id);
 
