@@ -86,6 +86,17 @@ main {
 }
 
 /**
+ * animate scroll
+ */
+
+.hidden {
+  opacity: 0;
+}
+.show {
+  opacity: 1;
+}
+
+/**
  * footer
  */
 
@@ -96,6 +107,7 @@ main {
 
 .footer-top {
   width: 100%;
+  max-width: 1200px;
   margin: auto;
   text-align: left;
   padding: 50px 50px;

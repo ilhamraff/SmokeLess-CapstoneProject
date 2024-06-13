@@ -41,6 +41,10 @@
   border-color: #008080;
 }
 
+.content-image img {
+  max-width: 700px;
+}
+
 /**
  * cigarette-content
  */
@@ -64,10 +68,11 @@
 .cigarette-content .content-box {
   display: flex;
   justify-content: center;
+  gap: 4rem;
 }
 
 .cigarette-content .content-box img {
-  max-width: 400px;
+  max-height: 500px;
 }
 
 .cigarette-content .card-container {
@@ -264,4 +269,8 @@ textarea {
 
 .comment-item {
   margin-bottom: 20px;
+}
+
+.comment-item #comment-date {
+  color: gray;
 }

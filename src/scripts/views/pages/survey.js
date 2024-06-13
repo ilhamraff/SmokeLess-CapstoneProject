@@ -1,4 +1,4 @@
-import swal from 'sweetalert';
+import TesHandler from '../../utils/addicted-handler';
 
 const Survey = {
   async render() {
@@ -30,8 +30,7 @@ const Survey = {
               
               <p>2. Jenis Kelamin:</p>
               <input type="radio" name="gender" value="0" /> Laki-laki<br />
-              <input type="radio" name="gender" value="0" /> Perempuan<br />
-              <input type="radio" name="gender" value="0" /> Lainnya<br /><br />
+              <input type="radio" name="gender" value="0" /> Perempuan<br /><br />
               
               <p>3. Status Pendidikan:</p>
               <input type="radio" name="education" value="0" /> Tidak/belum sekolah<br />
@@ -126,105 +125,14 @@ const Survey = {
   async afterRender() {
     const clearButton = document.querySelector('.clear');
     clearButton.addEventListener('click', () => {
-      this.clearForm();
+      TesHandler.clearForm();
     });
 
     const hitungButton = document.querySelector('.hitung');
     hitungButton.addEventListener('click', () => {
-      this.hitungKecanduan();
+      TesHandler.hitungKecanduan();
     });
   },
-
-  hitungKecanduan() {
-    const questions = ['age', 'gender', 'education', 'occupation', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
-    let allAnswered = true;
-    let firstUnanswered = null;
-
-    questions.forEach((question) => {
-      if (!document.querySelector(`input[name="${question}"]:checked`)) {
-        allAnswered = false;
-        if (!firstUnanswered) {
-          firstUnanswered = question;
-        }
-      }
-    });
-
-    if (!allAnswered) {
-      swal({
-        title: 'Harap isi semua pertanyaan.',
-        text: 'Silakan lengkapi semua pertanyaan yang belum dijawab.',
-        icon: 'warning',
-        button: 'OK',
-      }).then(() => {
-        document.querySelector(`input[name="${firstUnanswered}"]`).scrollIntoView();
-        document.querySelector(`input[name="${firstUnanswered}"]`).focus();
-      });
-      return;
-    }
-
-    let skor = 0;
-
-    // Mengambil nilai dari jawaban yang dipilih
-    questions.forEach((question) => {
-      skor += parseInt(document.querySelector(`input[name="${question}"]:checked`).value);
-    });
-
-    // Menentukan tingkat kecanduan berdasarkan skor
-    let tingkatKecanduan = '';
-
-    if (skor <= 2) {
-      tingkatKecanduan = 'Ketergantungan rendah';
-    } else if (skor <= 4) {
-      tingkatKecanduan = 'Ketergantungan rendah sampai sedang';
-    } else if (skor <= 7) {
-      tingkatKecanduan = 'Ketergantungan sedang';
-    } else {
-      tingkatKecanduan = 'Ketergantungan tinggi';
-    }
-
-    // Menghitung persentase
-    const persentase = (skor / 11) * 100;
-
-    // Menentukan warna progress bar berdasarkan tingkat kecanduan
-    let barClass = '';
-    if (skor <= 2) {
-      barClass = 'low';
-    } else if (skor <= 4) {
-      barClass = 'medium';
-    } else if (skor <= 7) {
-      barClass = 'medium';
-    } else {
-      barClass = 'high';
-    }
-
-    // Menampilkan hasil dengan progress bar
-    const progressBar = `<div class="progress-container">
-                        <div class="progress-bar ${barClass}" style="width: ${persentase}%">
-                            ${persentase.toFixed(2)}%
-                        </div>
-                    </div>`;
-
-    // Menampilkan hasil
-    document.getElementById('hasilKecanduan').innerHTML = `Skor Anda: ${
-      skor
-    } - ${
-      tingkatKecanduan
-    } (${
-      persentase.toFixed(2)
-    }%)<br>${
-      progressBar}`;
-  },
-
-  clearForm() {
-    // Menghapus semua pilihan jawaban
-    document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach((radio) => {
-      radio.checked = false;
-    });
-
-    // Menghapus hasil kecanduan
-    document.getElementById('hasilKecanduan').innerHTML = 'Skor Anda: -';
-  },
-
 };
 
 export default Survey;

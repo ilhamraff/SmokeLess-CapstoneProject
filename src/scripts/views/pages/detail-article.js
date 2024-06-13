@@ -43,8 +43,6 @@ const Detail = {
         const card = document.createElement('div');
         card.className = 'article-item-aside';
         card.dataset.id = id;
-        console.log(article);
-        console.log(id);
 
         card.innerHTML = createArticleCardAside(article, id);
 

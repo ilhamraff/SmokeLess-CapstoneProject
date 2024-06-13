@@ -2,9 +2,6 @@
   .menu li {
     margin-right: 5px;
   }
-  .survey-description .content-one{
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -32,47 +29,29 @@
     flex-direction: column;
   }
 
-  .form-section form {
-    width: 100%;
-    max-width: 400px;
-    min-width: 300px;
-}
-
-  .benefits-survey {
-    grid-template-columns: 1fr;
-  }
-
-  .progress-container {
-    width: 70%;
-  }
+  /* Footer responsive styles for 768px */
   .footer-top {
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
   }
-
-  .footer-top .footer-right {
+  .footer-left, .footer-center, .footer-right {
+    min-width: 100%;
+    text-align: center;
+  }
+  .footer-left img {
     width: 100%;
-    padding-left: 30px;
+    max-width: 300px;
+    height: auto;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links li {
+    margin: 10px 0;
+  }
+  .footer-icons {
+    margin-top: 10px;
   }
 }
-
-/* @media screen and (max-width: 480px) {
-  .navbar {
-    padding: 10px 20px;
-  }
-  .logo {
-    font-size: 12pt;
-  }
-  .menu.aktif {
-    top: 74px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .logo {
-    font-size: 10pt;
-  }
-  .tombol {
-    font-size: 12pt;
-  }
-} */

@@ -2,6 +2,7 @@ import ArticleSource from '../../data/article-source';
 import CommentSource from '../../data/comment-source';
 import HomeSource from '../../data/home-source';
 import AddComment from '../../utils/comment-handler';
+import PageScroll from '../../utils/scroll-handler';
 import {
   crateCigaretteContentCard,
   createBenefitsCard,
@@ -126,6 +127,8 @@ const Home = {
           console.error('Error:', error);
         }
       });
+
+      PageScroll.init();
     } catch (error) {
       console.error('Error rendering: ', error);
     }

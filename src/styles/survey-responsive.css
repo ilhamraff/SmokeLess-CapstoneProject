@@ -1,0 +1,105 @@
+@media screen and (max-width: 1024px) {
+  .survey-description .content-one{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-section form {
+      width: 100%;
+      max-width: 400px;
+      min-width: 300px;
+  }
+
+  .benefits-container {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-container {
+    width: 70%; /* Mengurangi lebar pada perangkat dengan lebar layar lebih kecil */
+}
+}
+
+@media screen and (max-width: 480px) {
+  .form-section form {
+      width: 100%;
+      max-width: 270px;
+      min-width: 200px;
+  }
+
+  .card-benefit {
+    margin: 5px 0;
+  }
+  .benefit-conclusion {
+    padding: 0 10px;
+  }
+
+  .progress-container {
+    width: 90%; /* Mengurangi lebar lebih lanjut pada perangkat dengan lebar layar sangat kecil */
+  }
+
+  .low {
+    font-size: small;
+  }
+
+  .medium {
+    font-size: small;
+  }
+
+  .high {
+    font-size: small;
+  }
+
+  /* Footer responsive styles */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-left, .footer-center, .footer-right {
+    min-width: 100%;
+    text-align: center;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links li {
+    margin: 10px 0;
+  }
+  .footer-icons {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .logo {
+      font-size: 10pt;
+  }
+  .tombol {
+      font-size: 12pt;
+  }
+  .form-section form {
+      width: 100%;
+      max-width: 220px;
+      min-width: 200px;
+  }
+
+  .benefits-title h1 {
+    font-size: 1.5em;
+  }
+  .benefit-conclusion h3 {
+    font-size: 1.2em;
+  }
+  .benefit-conclusion p {
+    font-size: 0.9em;
+  }
+
+  /* Footer responsive styles for small screens */
+  .footer-links li {
+    margin: 5px 0;
+  }
+  .footer-icons i {
+    font-size: 20px;
+}
+}

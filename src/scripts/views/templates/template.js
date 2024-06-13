@@ -25,13 +25,14 @@ const createCommentItem = (comment) => `
   <div class="comment-item">
     <h4>${comment.name}</h4>
     <p>${comment.comment}</p>
-    <p>${comment.date}</p>
+    <p id="comment-date">${comment.date}</p>
   </div>`;
+
 const createCommentSection = () => `
-  <article class="comments-container hidden">
+  <article class="comments-container">
     <h1>Post A Comment</h1>
     <div class="commentbox">
-      <img src="/images/user.png" alt="" />
+      <img class="lazyload" src="/images/user.png" alt="" />
       <div class="form-content">
         <h2>Comment As:</h2>
         <form action="" class="comment-form" id="comment-form">
@@ -52,14 +53,14 @@ const createCommentSection = () => `
       </div>
     </div>
     <div class="comment-list">
-      <img src="/images/user.png" alt="" />
+      <img class="lazyload" src="/images/user.png" alt="" />
       <div class="comments-detail" id="comment-list"></div>
     </div>
   </article>`;
 
 const crateCigaretteContentCard = (content) => `
     <div class="card">
-      <img src="${content.img}" alt="Avatar" style="width: 100%" />
+      <img class="lazyload" src="${content.img}" alt="Avatar" style="width: 100%" />
       <div class="container">
         <h3>${content.name}</h3>
       </div>
@@ -79,7 +80,7 @@ const createDiseaseContainer = (disease) => `
 const createBenefitsCard = (benefit) => `
   <div class="card-benefit">
     <div class="user-picture">
-      <img src="${benefit.img}" alt="" />
+      <img class="lazyload" src="${benefit.img}" alt="" />
     </div>
     <h3 class="benefits-title">${benefit.title}</h3>
   </div>`;
