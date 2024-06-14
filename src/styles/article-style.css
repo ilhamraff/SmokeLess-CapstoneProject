@@ -52,6 +52,11 @@
   position: relative;
 }
 
+.article-item:hover {
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
 .articles-container .article-item a:hover {
   i {
     padding-left: 10px;

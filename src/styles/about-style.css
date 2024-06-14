@@ -49,6 +49,11 @@
   font-size: 20px;
 }
 
+.about-website p:hover {
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
 .about-dev {
   margin: 0 auto;
   padding: 80px;
