@@ -18,6 +18,10 @@
   flex-direction: column;
 }
 
+.article-headline h1 {
+  margin-bottom: 20px;
+}
+
 .articles-container .article-item {
   background-color: #008080;
   color: white;
