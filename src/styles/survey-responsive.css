@@ -1,14 +1,23 @@
 @media screen and (max-width: 1024px) {
-  .survey-description .content-one{
+  .survey-description .content-one {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .form-section form {
-      width: 100%;
-      max-width: 400px;
-      min-width: 300px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+  }
+
+  #p1 {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .surveys-title p {
+    font-size: 18px;
   }
 
   .benefits-container {
@@ -16,26 +25,29 @@
   }
 
   .progress-container {
-    width: 70%; /* Mengurangi lebar pada perangkat dengan lebar layar lebih kecil */
-}
+    width: 70%;
+    /* Mengurangi lebar pada perangkat dengan lebar layar lebih kecil */
+  }
 }
 
 @media screen and (max-width: 480px) {
   .form-section form {
-      width: 100%;
-      max-width: 270px;
-      min-width: 200px;
+    width: 100%;
+    max-width: 270px;
+    min-width: 200px;
   }
 
   .card-benefit {
     margin: 5px 0;
   }
+
   .benefit-conclusion {
     padding: 0 10px;
   }
 
   .progress-container {
-    width: 90%; /* Mengurangi lebar lebih lanjut pada perangkat dengan lebar layar sangat kecil */
+    width: 90%;
+    /* Mengurangi lebar lebih lanjut pada perangkat dengan lebar layar sangat kecil */
   }
 
   .low {
@@ -55,18 +67,24 @@
     flex-direction: column;
     align-items: center;
   }
-  .footer-left, .footer-center, .footer-right {
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
     min-width: 100%;
     text-align: center;
   }
+
   .footer-links {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .footer-links li {
     margin: 10px 0;
   }
+
   .footer-icons {
     margin-top: 10px;
   }
@@ -74,23 +92,27 @@
 
 @media screen and (max-width: 320px) {
   .logo {
-      font-size: 10pt;
+    font-size: 10pt;
   }
+
   .tombol {
-      font-size: 12pt;
+    font-size: 12pt;
   }
+
   .form-section form {
-      width: 100%;
-      max-width: 220px;
-      min-width: 200px;
+    width: 100%;
+    max-width: 220px;
+    min-width: 200px;
   }
 
   .benefits-title h1 {
     font-size: 1.5em;
   }
+
   .benefit-conclusion h3 {
     font-size: 1.2em;
   }
+
   .benefit-conclusion p {
     font-size: 0.9em;
   }
@@ -99,7 +121,8 @@
   .footer-links li {
     margin: 5px 0;
   }
+
   .footer-icons i {
     font-size: 20px;
-}
+  }
 }

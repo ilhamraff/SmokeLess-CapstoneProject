@@ -43,7 +43,6 @@ const Detail = {
         const card = document.createElement('div');
         card.className = 'article-item-aside';
         card.dataset.id = id;
-
         card.innerHTML = createArticleCardAside(article, id);
 
         card.addEventListener('click', () => {

@@ -1,16 +1,18 @@
+import PageScroll from '../../utils/scroll-handler';
+
 const About = {
   async render() {
     return `
         <section class="about-us">
-            <div class="gambar">
+            <div class="gambar hidden">
                 <img class="lazyload" src="/images/Logo.png" alt="Logo SmokeLess">
             </div>
-            <p>Website informasi layanan berhenti merokok</p>
-            <h2>"Perubahan Dimulai Dari <i>Dirimu Sendiri</i>"</h2>
+            <p class="hidden">Website informasi layanan berhenti merokok</p>
+            <h2 class="hidden">"Perubahan Dimulai Dari <i>Dirimu Sendiri</i>"</h2>
         </section>
 
         <section class="about-website" id="content">
-            <article class="about-container">
+            <article class="about-container hidden">
                 <h1>Informasi Tentang Website</h1>
                 <p>
                     Prevalensi tinggi merokok di Indonesia, terutama di kalangan laki-laki dengan tingkat
@@ -31,7 +33,7 @@ const About = {
             </article>    
         </section>
 
-        <section class="about-dev">
+        <section class="about-dev hidden">
             <h1>Informasi Tentang Kontak</h1>
             <p>
                 Ingin mengetahui alasan, atau pengembangan aplikasi lebih lanjut kedepannya
@@ -85,6 +87,7 @@ const About = {
   },
 
   async afterRender() {
+    PageScroll.init();
   },
 };
 

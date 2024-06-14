@@ -18,6 +18,10 @@
   flex-direction: column;
 }
 
+.article-headline h1 {
+  margin-bottom: 20px;
+}
+
 .articles-container .article-item {
   background-color: #008080;
   color: white;
@@ -48,6 +52,11 @@
   position: relative;
 }
 
+.article-item:hover {
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
 .articles-container .article-item a:hover {
   i {
     padding-left: 10px;
@@ -69,7 +78,6 @@ i {
 
 #searchInput {
   width: 100%;
-  max-width: 600px;
   padding: 10px;
   margin: 20px 0;
   border: 1px solid #ccc;

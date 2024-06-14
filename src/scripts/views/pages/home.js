@@ -19,8 +19,10 @@ const Home = {
           <div class="content-description">
             <h1 class="title">Selamat Datang</h1>
             <p>
-              Bersama Kami Berhenti Merokok<br />
-              dan Menuju Hidup yang Lebih Sehat
+              Bersama dengan kami untuk menghentikan kebiasaan <br>
+              merokok dan memulai perjalanan menuju kehidupan <br>
+              yang lebih sehat, bebas dari bahaya rokok, <br>
+              serta penuh dengan energi dan vitalitas.
             </p>
             <a href="#cigarette">Baca Selengkapnya
             </a>
