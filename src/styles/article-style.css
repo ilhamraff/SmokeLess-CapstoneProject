@@ -66,3 +66,21 @@ i {
   font-style: italic;
   color: #008080;
 }
+
+#searchInput {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
