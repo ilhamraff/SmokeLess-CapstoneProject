@@ -40,6 +40,7 @@
   }
 
   .benefit-conclusion p {
+    margin-top: 10px;
     text-align: center;
   }
 
@@ -53,7 +54,7 @@
     margin: 10px;
   }
 
-  .card-container .card  img {
+  .card-container .card img {
     padding-right: 15px;
   }
 
@@ -203,7 +204,7 @@
   }
 
   .content-description p {
-    font-size: 15px;
+    font-size: 12.5px;
     text-align: center;
   }
 
@@ -236,6 +237,7 @@
 
   .benefit-conclusion h3 {
     font-size: 17px;
+    margin-bottom: 10px;
   }
 
   .benefit-conclusion p {
