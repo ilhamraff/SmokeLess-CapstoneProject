@@ -24,7 +24,7 @@ const Home = {
               yang lebih sehat, bebas dari bahaya rokok, <br>
               serta penuh dengan energi dan vitalitas.
             </p>
-            <a href="#cigarette">Baca Selengkapnya
+            <a id="next-button" href="#cigarette">Baca Selengkapnya
             </a>
           </div>
           <div class="content-image">
