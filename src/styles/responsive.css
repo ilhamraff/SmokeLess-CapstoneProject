@@ -2,7 +2,8 @@
   .menu li {
     margin-right: 5px;
   }
-  .survey-description .content-one{
+
+  .survey-description .content-one {
     width: 100%;
   }
 }
@@ -11,6 +12,7 @@
   .navbar .container .menu {
     display: none;
   }
+
   .navbar .container .menu.aktif {
     display: block;
     position: absolute;
@@ -20,31 +22,21 @@
     right: 0;
     left: 0;
   }
+
   .navbar .container .menu.aktif li a {
     padding: 10px;
     display: block !important;
   }
+
   .tombol {
     display: block;
   }
+
   .welcome-content {
     display: flex;
     flex-direction: column;
   }
 
-  .form-section form {
-    width: 100%;
-    max-width: 400px;
-    min-width: 300px;
-}
-
-  .benefits-survey {
-    grid-template-columns: 1fr;
-  }
-
-  .progress-container {
-    width: 70%;
-  }
   .footer-top {
     flex-direction: column;
     gap: 30px;
@@ -52,27 +44,63 @@
 
   .footer-top .footer-right {
     width: 100%;
-    padding-left: 30px;
   }
 }
 
-/* @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .navbar {
     padding: 10px 20px;
   }
+
   .logo {
     font-size: 12pt;
   }
+
   .menu.aktif {
     top: 74px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links li {
+    margin: 10px 0;
+  }
+
+  .footer-icons {
+    margin-top: 10px;
+  }
+
+  .footer-left img {
+    width: 300px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .logo {
-    font-size: 10pt;
+  .footer-links li {
+    margin: 5px 0;
   }
-  .tombol {
-    font-size: 12pt;
+
+  .footer-icons i {
+    font-size: 20px;
   }
-} */
+
+  .footer-left img {
+    width: 300px;
+  }
+}
