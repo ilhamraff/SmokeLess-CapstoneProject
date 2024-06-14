@@ -9,7 +9,14 @@ import '../styles/about-style.css';
 import '../styles/about-responsive.css';
 import '../styles/detail-style.css';
 import '../styles/survey-style.css';
+import '../styles/survey-responsive.css';
+
+import 'animate.css';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('.tombol'),
@@ -23,4 +30,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });

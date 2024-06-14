@@ -53,6 +53,9 @@
   margin: 0 auto;
   padding: 80px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-dev h1 {
@@ -61,7 +64,8 @@
 }
 
 .about-dev p {
-  text-align: justify;
+  max-width: 1200px;
+  text-align: center;
   line-height: 1.5;
   padding: 25px;
   font-size: 20px;
@@ -130,5 +134,5 @@
 
 .dev-container .icon-picture img:hover {
   transform: translateY(-10px);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }

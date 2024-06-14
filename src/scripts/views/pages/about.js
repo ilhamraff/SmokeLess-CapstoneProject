@@ -3,7 +3,7 @@ const About = {
     return `
         <section class="about-us">
             <div class="gambar">
-                <img src="/images/Logo.png" alt="Logo SmokeLess">
+                <img class="lazyload" src="/images/Logo.png" alt="Logo SmokeLess">
             </div>
             <p>Website informasi layanan berhenti merokok</p>
             <h2>"Perubahan Dimulai Dari <i>Dirimu Sendiri</i>"</h2>
@@ -41,7 +41,7 @@ const About = {
             <div class="dev-container">
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="images/potoAldova.png" alt="Foto Aldova Ferdiansyah" />
+                        <img class="lazyload" src="images/potoAldova.png" alt="Foto Aldova Ferdiansyah" />
                     </div>
                     <h3 class="dev-title">Aldova Ferdiansyah</h3>
                     <div class="icon-picture">
@@ -55,7 +55,7 @@ const About = {
                 </div>
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="images/potoHarfin.png" alt="Foto Harfin Aqbil Falah " />
+                        <img class="lazyload" src="images/potoHarfin.png" alt="Foto Harfin Aqbil Falah " />
                     </div>
                     <h3 class="dev-title">Harfin Aqbil Falah</h3>
                     <div class="icon-picture">
@@ -68,7 +68,7 @@ const About = {
                 </div>
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="images/potoIlham.png" alt="Foto Ilham Rafi Fadhilah" />
+                        <img class="lazyload" src="images/potoIlham.png" alt="Foto Ilham Rafi Fadhilah" />
                     </div>
                     <h3 class="dev-title">Ilham Rafi Fadhilah</h3>
                     <div class="icon-picture">

@@ -82,6 +82,18 @@ main {
 .content {
   padding: 32px;
   margin: 0;
+  width: 100%;
+}
+
+/**
+ * animate scroll
+ */
+
+.hidden {
+  opacity: 0;
+}
+.show {
+  opacity: 1;
 }
 
 /**
@@ -90,11 +102,12 @@ main {
 
 .footer {
   background-color: #008080;
+  width: 100%;
 }
 
 .footer-top {
-  box-sizing: border-box;
   width: 100%;
+  max-width: 1200px;
   margin: auto;
   text-align: left;
   padding: 50px 50px;

@@ -38,7 +38,7 @@ body {
 }
 
 /* Button Styling */
-button {
+.form-section button {
     background-color: #008080;
     border: none;
     color: white;
@@ -51,11 +51,11 @@ button {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-button:hover {
+.form-section button:hover {
     transform: scale(1.05);
 }
 
-button:active {
+.form-section button:active {
     background-color: #3e8e41;
 }
 

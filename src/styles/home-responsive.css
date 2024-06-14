@@ -1,5 +1,9 @@
 /* Media Queries for Responsiveness */
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  .content-image img {
+    max-width: 400px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   body {

@@ -2,6 +2,7 @@ import ArticleSource from '../../data/article-source';
 import CommentSource from '../../data/comment-source';
 import HomeSource from '../../data/home-source';
 import AddComment from '../../utils/comment-handler';
+import PageScroll from '../../utils/scroll-handler';
 import {
   crateCigaretteContentCard,
   createBenefitsCard,
@@ -16,13 +17,12 @@ const Home = {
     <section class="content" id="welcome">
         <article class="welcome-content">
           <div class="content-description">
-            <h1 class="title">SELAMAT DATANG</h1>
+            <h1 class="title">Selamat Datang</h1>
             <p>
               Bersama Kami Berhenti Merokok<br />
               dan Menuju Hidup yang Lebih Sehat
             </p>
-            <a href="#cigarette">Baca Selengkapnya  
-              <i class="fa fa-long-arrow-right"></i>
+            <a href="#cigarette">Baca Selengkapnya
             </a>
           </div>
           <div class="content-image">
@@ -127,6 +127,8 @@ const Home = {
           console.error('Error:', error);
         }
       });
+
+      PageScroll.init();
     } catch (error) {
       console.error('Error rendering: ', error);
     }

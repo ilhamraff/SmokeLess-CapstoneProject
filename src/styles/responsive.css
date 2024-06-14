@@ -2,10 +2,6 @@
   .menu li {
     margin-right: 5px;
   }
-
-  .survey-description .content-one {
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -37,70 +33,29 @@
     flex-direction: column;
   }
 
-  .footer-top {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .footer-top .footer-right {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .navbar {
-    padding: 10px 20px;
-  }
-
-  .logo {
-    font-size: 12pt;
-  }
-
-  .menu.aktif {
-    top: 74px;
-  }
-
+  /* Footer responsive styles for 768px */
   .footer-top {
     flex-direction: column;
     align-items: center;
   }
-
-  .footer-left,
-  .footer-center,
-  .footer-right {
+  .footer-left, .footer-center, .footer-right {
     min-width: 100%;
     text-align: center;
   }
-
+  .footer-left img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
   .footer-links {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .footer-links li {
     margin: 10px 0;
   }
-
   .footer-icons {
     margin-top: 10px;
-  }
-
-  .footer-left img {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .footer-links li {
-    margin: 5px 0;
-  }
-
-  .footer-icons i {
-    font-size: 20px;
-  }
-
-  .footer-left img {
-    width: 300px;
   }
 }

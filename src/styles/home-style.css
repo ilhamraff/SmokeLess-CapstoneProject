@@ -14,12 +14,13 @@
 .content-description .title {
   color: #008080;
   margin-block: 1rem;
-  font-size: 32px;
+  font-size: 56px;
 }
 
 .content-description p {
   line-height: 1.7rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-size: 18px;
 }
 
 .content-description a {
@@ -34,15 +35,14 @@
   transition: all 0.15s ease-in;
 }
 
-.content-description a i {
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
 .content-description a:hover {
   color: #008080;
   background-color: white;
   border-color: #008080;
+}
+
+.content-image img {
+  max-width: 700px;
 }
 
 /**
@@ -68,10 +68,11 @@
 .cigarette-content .content-box {
   display: flex;
   justify-content: center;
+  gap: 4rem;
 }
 
 .cigarette-content .content-box img {
-  max-width: 400px;
+  max-height: 500px;
 }
 
 .cigarette-content .card-container {
@@ -255,6 +256,11 @@ textarea {
   font-size: 1rem;
   cursor: pointer;
   margin: 0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.comment-form button:hover {
+    transform: scale(1.05);
 }
 
 .comment-list {
@@ -263,4 +269,8 @@ textarea {
 
 .comment-item {
   margin-bottom: 20px;
+}
+
+.comment-item #comment-date {
+  color: gray;
 }
