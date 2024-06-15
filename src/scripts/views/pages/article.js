@@ -49,10 +49,8 @@ const Article = {
         }
       }
 
-      // Render semua artikel saat pertama kali dimuat
       renderArticles(articles);
 
-      // Tambahkan event listener untuk input pencarian
       searchInput.addEventListener('input', (event) => {
         const searchTerm = event.target.value.toLowerCase();
         const filteredArticles = Object.entries(articles)

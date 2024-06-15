@@ -19,14 +19,27 @@ const assetsToCache = [
   './sw.bundle.js',
 ];
 
+/**
+ * Event listener untuk event 'install'.
+ * Caches application shell assets saat service worker diinstall.
+ */
 self.addEventListener('install', (event) => {
   event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
 });
 
+/**
+ * Event listener untuk event 'activate'.
+ * Menghapus cache lama saat service worker diaktifkan.
+ */
 self.addEventListener('activate', (event) => {
   event.waitUntil(CacheHelper.deleteOldCache());
 });
 
+/**
+ * Event listener untuk event 'fetch'.
+ * Menangani request network dan mengembalikan cache
+ * jika tersedia, atau mengambil dari jaringan jika tidak.
+ */
 self.addEventListener('fetch', (event) => {
   event.respondWith(CacheHelper.revalidateCache(event.request));
 });

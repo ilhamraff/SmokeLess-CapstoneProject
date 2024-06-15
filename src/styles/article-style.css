@@ -7,6 +7,9 @@
 
 .articles-container {
   margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .article-content .article-headline {
@@ -25,7 +28,6 @@
 .articles-container .article-item {
   background-color: #008080;
   color: white;
-  padding: 10px 30px;
   margin-bottom: 2rem;
   border-radius: 10px;
   text-align: left;
@@ -50,6 +52,18 @@
   display: inline-block;
   top: 5px;
   position: relative;
+}
+
+.articles-container .article-item img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  margin: 0;
+}
+
+.articles-container .article-item .item-description {
+  padding: 20px;
 }
 
 .article-item:hover {

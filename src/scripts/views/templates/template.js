@@ -1,13 +1,16 @@
 const createArticleCard = (article, id) => {
-  const truncatedContent = article.content.length > 100
-    ? `${article.content.substring(0, 100)} ...`
+  const truncatedContent = article.content.length > 70
+    ? `${article.content.substring(0, 70)} ...`
     : article.content;
   return `
-    <h2>${article.title}</h2>
-    <p>${truncatedContent}</p>
-    <a href="/#/detail/${id}">Baca Selengkapnya  
-      <i class="fa fa-long-arrow-right"></i>
-    </a>`;
+    <img src="${article.thumbnail}" alt="${article.title}" />
+    <div class="item-description">
+      <h2>${article.title}</h2>
+      <p>${truncatedContent}</p>
+      <a href="/#/detail/${id}">Baca Selengkapnya  
+        <i class="fa fa-long-arrow-right"></i>
+      </a>
+    <div>`;
 };
 
 const createArticleCardAside = (article, id) => {
@@ -89,6 +92,10 @@ const createFormArticle = () => `
   <form action="" id="article-form">
       <h2>Buat Artikel</h2>
       <div class="form-component">
+        <i class="fa fa-picture-o" aria-hidden="true"></i>
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/*">
+      </div>
+      <div class="form-component">
         <i class="fa fa-user" aria-hidden="true"></i>
         <input
           type="text"
@@ -120,6 +127,7 @@ const createFormArticle = () => `
 
 const createDetailArticleSection = (article) => `
   <div class="article-detail">
+    <img src="${article.thumbnail}" alt="${article.title}" />
     <h2 class="article-title">${article.title || 'Title not available'}</h2>
     <div class="article-author">by ${
   article.author || 'Author not available'

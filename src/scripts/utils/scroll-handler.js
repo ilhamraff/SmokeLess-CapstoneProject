@@ -1,4 +1,11 @@
+/**
+ * PageScroll adalah objek yang menangani animasi elemen halaman saat pengguna menggulir halaman.
+ */
 const PageScroll = {
+  /**
+   * Menginisialisasi IntersectionObserver untuk mengamati elemen yang tersembunyi dan
+   * menambahkan/menghapus kelas animasi saat elemen tersebut masuk atau keluar dari viewport.
+   */
   init() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

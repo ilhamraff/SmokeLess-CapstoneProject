@@ -23,6 +23,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
     "html-webpack-plugin": "^5.6.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
     "playwright": "^1.44.1",
     "style-loader": "^4.0.0",
     "webpack": "^5.91.0",
@@ -34,6 +36,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^41.4.2",
     "animate.css": "^4.1.1",
+    "firebase": "^10.12.2",
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.14.1",
     "sweetalert": "^2.1.2",

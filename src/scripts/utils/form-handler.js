@@ -1,6 +1,8 @@
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Swal from 'sweetalert2';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import AddArticleHandler from './article-handler';
+import storage from './firebase-config';
 
 /**
  * formHandler adalah objek yang bertanggung jawab untuk menginisialisasi CKEditor,
@@ -67,6 +69,7 @@ const formHandler = {
       addArticleForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        const articleThumbnail = document.getElementById('thumbnail');
         const articleAuthor = document.getElementById('author').value;
         const articleTitle = document.getElementById('title').value;
         const articleBody = bodyEditor.getData();
@@ -79,7 +82,15 @@ const formHandler = {
           });
         }
 
+        const thumbnailFile = articleThumbnail.files[0];
+        const fileRef = ref(storage, `thumbnails/${thumbnailFile.name}`);
+
+        // Mengunggah gambar ke Firebase Storage
+        await uploadBytes(fileRef, thumbnailFile);
+        const thumbnailUrl = await getDownloadURL(fileRef);
+
         const articleData = {
+          thumbnail: thumbnailUrl,
           author: articleAuthor,
           title: articleTitle,
           content: articleBody,
