@@ -75,7 +75,7 @@ const formHandler = {
         const articleBody = bodyEditor.getData();
         const date = new Date().toISOString().split('T')[0];
 
-        if (!articleAuthor || !articleTitle || !articleBody) {
+        if (!articleThumbnail.files.length || !articleAuthor || !articleTitle || !articleBody) {
           return Swal.fire({
             icon: 'error',
             title: 'Harap Isi Semua Kolom',

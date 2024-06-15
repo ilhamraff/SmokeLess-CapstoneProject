@@ -6,6 +6,11 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
+const { DefinePlugin } = require('webpack');
+
+require('dotenv').config({
+  path: path.resolve('.env'),
+});
 
 module.exports = {
   entry: {
@@ -56,7 +61,6 @@ module.exports = {
     },
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -80,6 +84,9 @@ module.exports = {
           progressive: true,
         }),
       ],
+    }),
+    new DefinePlugin({
+      'process.env': JSON.stringify(process.env),
     }),
   ],
 };

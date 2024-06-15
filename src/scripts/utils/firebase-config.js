@@ -6,7 +6,7 @@ import { getStorage } from 'firebase/storage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyDj6JxW242-4LXWfHEqF9Qp_NWATnOGxvY',
+  apiKey: process.env.APP_FIREBASE_API_KEY,
   authDomain: 'smokeless-web.firebaseapp.com',
   databaseURL: 'https://smokeless-web-default-rtdb.firebaseio.com',
   projectId: 'smokeless-web',
