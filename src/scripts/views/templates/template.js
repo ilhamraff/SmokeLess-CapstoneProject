@@ -3,7 +3,7 @@ const createArticleCard = (article, id) => {
     ? `${article.content.substring(0, 70)} ...`
     : article.content;
   return `
-    <img src="${article.thumbnail}" alt="${article.title}" />
+    <img class="lazyload" src="${article.thumbnail}" alt="${article.title}" />
     <div class="item-description">
       <h2>${article.title}</h2>
       <p>${truncatedContent}</p>

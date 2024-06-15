@@ -22,3 +22,6 @@ jobs:
       - name: Run Automated Test
         run: |
           npm install
+        env:
+          CI: true
+          APP_FIREBASE_API_KEY: ${{ secrets.APP_FIREBASE_API_KEY }}

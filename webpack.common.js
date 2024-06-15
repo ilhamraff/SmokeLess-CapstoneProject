@@ -1,15 +1,15 @@
-/* eslint-disable prefer-destructuring */
+// webpack.config.js
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
-const { DefinePlugin } = require('webpack');
+const webpack = require('webpack');
 
 require('dotenv').config({
-  path: path.resolve('.env'),
+  path: path.resolve(__dirname, '.env'),
 });
 
 module.exports = {
@@ -27,12 +27,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
+          'style-loader',
+          'css-loader',
         ],
       },
     ],
@@ -61,6 +57,7 @@ module.exports = {
     },
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -85,7 +82,7 @@ module.exports = {
         }),
       ],
     }),
-    new DefinePlugin({
+    new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
     }),
   ],
