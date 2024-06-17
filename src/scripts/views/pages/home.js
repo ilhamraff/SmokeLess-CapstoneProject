@@ -1,14 +1,15 @@
-import ArticleSource from "../../data/article-source";
-import CommentSource from "../../data/comment-source";
-import HomeSource from "../../data/home-source";
-import AddComment from "../../utils/comment-handler";
+import ArticleSource from '../../data/article-source';
+import CommentSource from '../../data/comment-source';
+import HomeSource from '../../data/home-source';
+import AddComment from '../../utils/comment-handler';
+import PageScroll from '../../utils/scroll-handler';
 import {
   crateCigaretteContentCard,
   createBenefitsCard,
   createCommentItem,
   createCommentSection,
   createDiseaseContainer,
-} from "../templates/template";
+} from '../templates/template';
 
 const Home = {
   async render() {
@@ -16,17 +17,22 @@ const Home = {
     <section class="content" id="welcome">
         <article class="welcome-content">
           <div class="content-description">
-            <h1 class="title">SELAMAT DATANG</h1>
+            <h1 class="title">Selamat Datang</h1>
             <p>
-              Bersama Kami Berhenti Merokok<br />
-              dan Menuju Hidup yang Lebih Sehat
+              Bersama dengan kami untuk menghentikan kebiasaan <br>
+              merokok dan memulai perjalanan menuju kehidupan <br>
+              yang lebih sehat, bebas dari bahaya rokok, <br>
+              serta penuh dengan energi dan vitalitas.
             </p>
-            <a href="#cigarette">Baca Selengkapnya  
-              <i class="fa fa-long-arrow-right"></i>
+            <a id="next-button" href="#cigarette">Baca Selengkapnya
             </a>
           </div>
           <div class="content-image">
-            <img src="./images/home.png" alt="Logo" />
+            <picture>
+              <source type="image/webp" srcset="./images/home.webp">
+              <source type="image/jpeg" srcset="./images/home.jpg">
+              <img src="./images/home.png" alt="Logo" />
+            </picture>
           </div>
         </article>
     </section>
@@ -36,7 +42,11 @@ const Home = {
           <h1>Apa saja sih Kandungan Rokok itu ?</h1>
           <div class="content-box">
             <div>
-              <img src="images/content-side.png" alt="" />
+              <picture>
+                <source type="image/webp" srcset="./images/content-side.webp">
+                <source type="image/jpeg" srcset="./images/content-side.jpg">
+                <img src="images/content-side.png" alt="">
+              </picture>
             </div>
             <div class="card-container"></div>
           </div>
@@ -71,46 +81,45 @@ const Home = {
   async afterRender() {
     try {
       const contents = await HomeSource.getContent();
-      const contentSection = document.querySelector(".card-container");
+      const contentSection = document.querySelector('.card-container');
       contents.forEach((content) => {
         contentSection.innerHTML += crateCigaretteContentCard(content);
       });
 
       const diseases = await HomeSource.getDisease();
-      const diseaseContainer = document.querySelector(".smoking-disease");
+      const diseaseContainer = document.querySelector('.smoking-disease');
       diseases.forEach((disease) => {
         diseaseContainer.innerHTML += createDiseaseContainer(disease);
       });
 
       const benefits = await HomeSource.getBenefits();
-      const benefitsSection = document.querySelector(".benefits-container");
+      const benefitsSection = document.querySelector('.benefits-container');
       benefits.forEach((benefit) => {
         benefitsSection.innerHTML += createBenefitsCard(benefit);
       });
 
-      const commentSection = document.querySelector("#comment");
+      const commentSection = document.querySelector('#comment');
       commentSection.innerHTML += createCommentSection();
 
       const comments = await CommentSource.getComment();
       const commentsArray = Object.values(comments);
-      const commentsContainer = document.querySelector("#comment-list");
+      const commentsContainer = document.querySelector('#comment-list');
       commentsArray.forEach((comment) => {
         commentsContainer.innerHTML += createCommentItem(comment);
       });
 
-      const addComment = document.getElementById("comment-form");
-      addComment.addEventListener("submit", async (event) => {
+      const addComment = document.getElementById('comment-form');
+      addComment.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const comentatorName = document.getElementById("commentatorName").value;
-        const comentatorComment =
-          document.getElementById("commentatorComment").value;
-        const date = new Date().toISOString().split("T")[0];
+        const comentatorName = document.getElementById('commentatorName').value;
+        const comentatorComment = document.getElementById('commentatorComment').value;
+        const date = new Date().toISOString().split('T')[0];
 
         const commentData = {
           name: comentatorName,
           comment: comentatorComment,
-          date: date,
+          date,
         };
 
         try {
@@ -119,17 +128,19 @@ const Home = {
           if (data && data.name) {
             AddComment.renderComment(commentData);
 
-            document.getElementById("commentatorName").value = "";
-            document.getElementById("commentatorComment").value = "";
+            document.getElementById('commentatorName').value = '';
+            document.getElementById('commentatorComment').value = '';
           } else {
-            console.error("Unexpected data format:", data);
+            console.error('Unexpected data format:', data);
           }
         } catch (error) {
-          console.error("Error:", error);
+          console.error('Error:', error);
         }
       });
+
+      PageScroll.init();
     } catch (error) {
-      console.error("Error rendering: ", error);
+      console.error('Error rendering: ', error);
     }
   },
 };

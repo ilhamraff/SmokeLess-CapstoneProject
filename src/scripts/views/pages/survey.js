@@ -1,6 +1,8 @@
+import TesHandler from '../../utils/addicted-handler';
+
 const Survey = {
-    async render() {
-      return `
+  async render() {
+    return `
       <section class="survey-description">
             <div class="content-one">
                 <h1 class="judul1">Ukur Tingkat Kecanduan Anda</h1>
@@ -14,7 +16,7 @@ const Survey = {
 
          <!-- Form Perokok -->
          <section id="formPerokok" class="form-section">
-            <h2>Formulir Perokok</h2>
+            <h2>Test Kecanduan</h2>
             <form>
                 
               <p>1. Usia:</p>
@@ -28,8 +30,7 @@ const Survey = {
               
               <p>2. Jenis Kelamin:</p>
               <input type="radio" name="gender" value="0" /> Laki-laki<br />
-              <input type="radio" name="gender" value="0" /> Perempuan<br />
-              <input type="radio" name="gender" value="0" /> Lainnya<br /><br />
+              <input type="radio" name="gender" value="0" /> Perempuan<br /><br />
               
               <p>3. Status Pendidikan:</p>
               <input type="radio" name="education" value="0" /> Tidak/belum sekolah<br />
@@ -50,15 +51,15 @@ const Survey = {
               <input type="radio" name="occupation" value="0" /> Lainnya<br /><br />              
 
               <p>5. Berapa banyak Anda merokok dalam sehari?</p>
-              <input type="radio" name="q1" value="0" /> < 10 batang/hari<br />
-              <input type="radio" name="q1" value="1" /> 11-20 batang/hari<br />
-              <input type="radio" name="q1" value="2" /> 21-30 batang/hari<br />
-              <input type="radio" name="q1" value="3" /> >30 batang/hari<br /><br />
+              <input type="radio" name="q1" value="1" /> < 10 batang/hari<br />
+              <input type="radio" name="q1" value="2" /> 11-20 batang/hari<br />
+              <input type="radio" name="q1" value="3" /> 21-30 batang/hari<br />
+              <input type="radio" name="q1" value="4" /> >30 batang/hari<br /><br />
           
               <p>6. Seberapa cepat Anda merokok setelah bangun tidur?</p>
-              <input type="radio" name="q2" value="2" /> 5 menit setelah bangun tidur<br />
-              <input type="radio" name="q2" value="1" /> 6-30 menit setelah bangun tidur<br />
-              <input type="radio" name="q2" value="0" /> > 30 menit setelah bangun tidur<br /><br />
+              <input type="radio" name="q2" value="3" /> 5 menit setelah bangun tidur<br />
+              <input type="radio" name="q2" value="2" /> 6-30 menit setelah bangun tidur<br />
+              <input type="radio" name="q2" value="1" /> > 30 menit setelah bangun tidur<br /><br />
           
               <p>7. Apakah Anda merasa kesulitan untuk tidak merokok di “no smoking area”?</p>
               <input type="radio" name="q3" value="1" /> Ya<br />
@@ -84,9 +85,9 @@ const Survey = {
             <p id="hasilKecanduan">Skor Anda: -</p>
           </section>
           
-          <section class="content" id="benefits">
-            <article class="benefits-content">
-              <div class="benefits-title">
+          <section class="content" id="benefits-survey">
+            <article class="surveys-content">
+              <div class="surveys-title">
                 <h1>Mengapa Penting Mengukur Kecanduan?</h1>
                 <p>
                   Mengetahui tingkat kecanduan Anda terhadap nikotin adalah langkah awal yang
@@ -94,103 +95,44 @@ const Survey = {
                   ketergantungan anda. Anda dapat mengikuti referensi sebagai berikut :
                 </p>
               </div>
-              <div class="benefits-container">
-                <div class="card-benefit">
+              <div class="surveys-container">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/strategi.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">
+                  <h3 class="surveys-title">
                     Menentukan<br />
                     Strategi Yang Tepat
                   </h3>
                 </div>
-                <div class="card-benefit">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/kesadaran.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">Meningkatkan<br />Kesadaran</h3>
+                  <h3 class="surveys-title">Meningkatkan<br />Kesadaran</h3>
                 </div>
-                <div class="card-benefit">
+                <div class="card-survey">
                   <div class="user-picture">
                     <img src="/images/berhenti.png" alt="" />
                   </div>
-                  <h3 class="benefits-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
+                  <h3 class="surveys-title">Rencana Berhenti<br />Yang Lebih Baik</h3>
                 </div>
               </div>
             </article>
           </section>`;
-    },
-  
-    async afterRender() {
-        
-        const clearButton = document.querySelector(".clear");
-        clearButton.addEventListener('click', () => {
-            this.clearForm();
-        });
+  },
 
-        const hitungButton = document.querySelector(".hitung");
-        hitungButton.addEventListener('click', () => {
-            this.hitungKecanduan();
-        });
-        
-    },
+  async afterRender() {
+    const clearButton = document.querySelector('.clear');
+    clearButton.addEventListener('click', () => {
+      TesHandler.clearForm();
+    });
 
-    hitungKecanduan() {
-      var questions = ['age','gender','education','occupation', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
-      var allAnswered = true;
-      var firstUnanswered = null;
-    
-      questions.forEach(function(question) {
-          if (!document.querySelector('input[name="' + question + '"]:checked')) {
-              allAnswered = false;
-              if (!firstUnanswered) {
-                  firstUnanswered = question;
-              }
-          }
-      });
-    
-      if (!allAnswered) {
-          alert('Harap isi semua pertanyaan.');
-          document.querySelector('input[name="' + firstUnanswered + '"]').scrollIntoView();
-          document.querySelector('input[name="' + firstUnanswered + '"]').focus();
-          return;
-      }
-    
-      var skor = 0;
-    
-      // Mengambil nilai dari jawaban yang dipilih
-      questions.forEach(function(question) {
-          skor += parseInt(document.querySelector('input[name="' + question + '"]:checked').value);
-      });
-    
-      // Menentukan tingkat kecanduan berdasarkan skor
-      var tingkatKecanduan = "";
-    
-      if (skor <= 2) {
-          tingkatKecanduan = "Ketergantungan rendah";
-      } else if (skor <= 4) {
-          tingkatKecanduan = "Ketergantungan rendah sampai sedang";
-      } else if (skor <= 7) {
-          tingkatKecanduan = "Ketergantungan sedang";
-      } else {
-          tingkatKecanduan = "Ketergantungan tinggi";
-      }
-    
-      // Menampilkan hasil
-      document.getElementById("hasilKecanduan").innerHTML = "Skor Anda: " + skor + " - " + tingkatKecanduan;
-    },
-    
-    clearForm() {
-        // Menghapus semua pilihan jawaban
-        document.querySelectorAll('input[type="radio"],input[type="checkbox"]').forEach(radio => {
-            radio.checked = false;
-        });
-    
-        // Menghapus hasil kecanduan
-        document.getElementById("hasilKecanduan").innerHTML = "Skor Anda: -";
-    },
+    const hitungButton = document.querySelector('.hitung');
+    hitungButton.addEventListener('click', () => {
+      TesHandler.hitungKecanduan();
+    });
+  },
+};
 
-  };
-  
-  export default Survey;
-  
+export default Survey;

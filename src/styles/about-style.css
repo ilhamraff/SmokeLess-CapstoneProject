@@ -1,112 +1,143 @@
 .about-us {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 70px;
-    text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px;
+  text-align: center;
 }
 
 .about-us .gambar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-us h2 {
-    padding: 10px;
+  padding: 10px;
 }
 
 #content {
-    background-color: #008080;
+  background-color: #008080;
+}
+
+.about-container {
+  max-width: 1200px;
 }
 
 .about-website {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 40px;
-    text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 70px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-website h1 {
-    color: white;
+  color: white;
+  font-size: 28px;
+  padding: 20px;
 }
 
 .about-website p {
-    text-align: justify;
-    color: white;
-    line-height: 1.5;
+  text-align: justify;
+  color: white;
+  line-height: 1.5;
+  padding: 25px;
+  font-size: 20px;
+}
+
+.about-website p:hover {
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }
 
 .about-dev {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 55px;
-    text-align: center;
+  margin: 0 auto;
+  padding: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-dev h1 {
+  font-size: 28px;
+  padding: 20px;
 }
 
 .about-dev p {
-    text-align: justify;
-    line-height: 1.5;
+  max-width: 1200px;
+  text-align: center;
+  line-height: 1.5;
+  padding: 25px;
+  font-size: 20px;
 }
 
 .about-dev .dev-container {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .about-dev .card-dev {
-    background: #008080;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    color: white;
-    transition: all 0.3s ease;
-    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.295), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #008080;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.146),
+    0 6px 20px 0 rgba(0, 0, 0, 0.146);
 }
 
 .card-dev .dev-title {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .about-dev .card-dev:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .about-dev .dev-picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .about-dev .dev-picture img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  justify-content: center;
 }
 
 .about-dev .dev-title {
-    color: white;
-    font-size: 18px;
+  color: white;
+  font-size: 18px;
 }
 
 .about-dev .dev-container .icon-picture {
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
 .dev-container .icon-picture img {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .dev-container .icon-picture img:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }

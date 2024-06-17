@@ -22,6 +22,7 @@ body {
   width: 100%;
   display: block;
   transition: top 0.3s;
+  box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.192);
 }
 
 .navbar .container {
@@ -56,6 +57,7 @@ body {
   color: white;
   text-decoration: none;
   display: inline-block;
+  border-radius: 20px;
 }
 
 .tombol {
@@ -80,6 +82,18 @@ main {
 .content {
   padding: 32px;
   margin: 0;
+  width: 100%;
+}
+
+/**
+ * animate scroll
+ */
+
+.hidden {
+  opacity: 0;
+}
+.show {
+  opacity: 1;
 }
 
 /**
@@ -88,11 +102,12 @@ main {
 
 .footer {
   background-color: #008080;
+  width: 100%;
 }
 
 .footer-top {
-  box-sizing: border-box;
   width: 100%;
+  max-width: 1200px;
   margin: auto;
   text-align: left;
   padding: 50px 50px;
@@ -135,6 +150,7 @@ main {
 
 .footer-top .footer-right h3 {
   margin: 0;
+  margin-bottom: 10px;
 }
 
 /* Footer Bottom */

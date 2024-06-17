@@ -1,0 +1,8 @@
+@media screen and (max-width: 540px) {
+  .articles-container {
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+}

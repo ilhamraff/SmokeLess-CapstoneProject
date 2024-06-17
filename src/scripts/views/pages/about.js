@@ -1,35 +1,39 @@
+import PageScroll from '../../utils/scroll-handler';
+
 const About = {
-    async render() {
-      return `
+  async render() {
+    return `
         <section class="about-us">
-            <div class="gambar">
-                <img src="/images/Logo.png" alt="Logo SmokeLess">
+            <div class="gambar hidden">
+                <img class="lazyload" src="/images/Logo.png" alt="Logo SmokeLess">
             </div>
-            <p>Website informasi layanan berhenti merokok</p>
-            <h2>"Perubahan Dimulai Dari <i>Dirimu Sendiri</i>"</h2>
+            <p class="hidden">Website informasi layanan berhenti merokok</p>
+            <h2 class="hidden">"Perubahan Dimulai Dari <i>Dirimu Sendiri</i>"</h2>
         </section>
 
         <section class="about-website" id="content">
-            <h1>Informasi Tentang Website</h1>
-            <p>
-                Prevalensi tinggi merokok di Indonesia, terutama di kalangan laki-laki dengan tingkat
-                pendidikan dan ekonomi rendah, serta yang tinggal di perkotaan, menjadi masalah serius.
-                Dampak negatifnya tidak hanya dirasakan secara individu, tetapi juga secara sosial.
-                Meskipun ada upaya pengurangan, masih ada kesenjangan dalam kesadaran akan
-                risiko kesehatan, pola konsumsi rokok yang tinggi, usia mulai merokok yang masih muda,
-                dan pengaruh ekonomi terhadap keputusan merokok.
-            </p>
-            <p>
-                Maka dari itu website ini dibangun untuk membantu menurunkan angka prevalensi
-                pengguna rokok baik sebagai perokok aktif maupun pasif di wilayah ndonesia.
-                Website ini memberikan fitur kalkulator atau survey tingkat kecanduan seseorang
-                terhadap rokok, dengan memiliki tiga tingkatan yaitu tinggi, sedang, dan rendah.
-                Website ini juga memberikan referensi bacaan yang rekomendasi dari artikel lainnya
-                untuk mendukung para pengguna agar mulai berlatih mengurangi kecanduan rokok.
-            </p>
+            <article class="about-container hidden">
+                <h1>Informasi Tentang Website</h1>
+                <p>
+                    Prevalensi tinggi merokok di Indonesia, terutama di kalangan laki-laki dengan tingkat
+                    pendidikan dan ekonomi rendah, serta yang tinggal di perkotaan, menjadi masalah serius.
+                    Dampak negatifnya tidak hanya dirasakan secara individu, tetapi juga secara sosial.
+                    Meskipun ada upaya pengurangan, masih ada kesenjangan dalam kesadaran akan
+                    risiko kesehatan, pola konsumsi rokok yang tinggi, usia mulai merokok yang masih muda,
+                    dan pengaruh ekonomi terhadap keputusan merokok.
+                </p>
+                <p>
+                    Maka dari itu website ini dibangun untuk membantu menurunkan angka prevalensi
+                    pengguna rokok baik sebagai perokok aktif maupun pasif di wilayah ndonesia.
+                    Website ini memberikan fitur kalkulator atau survey tingkat kecanduan seseorang
+                    terhadap rokok, dengan memiliki tiga tingkatan yaitu tinggi, sedang, dan rendah.
+                    Website ini juga memberikan referensi bacaan yang rekomendasi dari artikel lainnya
+                    untuk mendukung para pengguna agar mulai berlatih mengurangi kecanduan rokok.
+                </p>
+            </article>    
         </section>
 
-        <section class="about-dev">
+        <section class="about-dev hidden">
             <h1>Informasi Tentang Kontak</h1>
             <p>
                 Ingin mengetahui alasan, atau pengembangan aplikasi lebih lanjut kedepannya
@@ -39,7 +43,7 @@ const About = {
             <div class="dev-container">
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="images/potoAldova.png" alt="Foto Aldova Ferdiansyah" />
+                        <img class="lazyload" src="images/potoAldova.png" alt="Foto Aldova Ferdiansyah" />
                     </div>
                     <h3 class="dev-title">Aldova Ferdiansyah</h3>
                     <div class="icon-picture">
@@ -53,7 +57,7 @@ const About = {
                 </div>
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="images/potoHarfin.png" alt="Foto Harfin Aqbil Falah " />
+                        <img class="lazyload" src="images/potoHarfin.png" alt="Foto Harfin Aqbil Falah " />
                     </div>
                     <h3 class="dev-title">Harfin Aqbil Falah</h3>
                     <div class="icon-picture">
@@ -66,7 +70,7 @@ const About = {
                 </div>
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img src="images/potoIlham.png" alt="Foto Ilham Rafi Fadhilah" />
+                        <img class="lazyload" src="images/potoIlham.jpg" alt="Foto Ilham Rafi Fadhilah" />
                     </div>
                     <h3 class="dev-title">Ilham Rafi Fadhilah</h3>
                     <div class="icon-picture">
@@ -80,10 +84,11 @@ const About = {
             </div>
         </section>
         `;
-    },
-  
-    async afterRender() {},
-  };
-  
-  export default About;
-  
+  },
+
+  async afterRender() {
+    PageScroll.init();
+  },
+};
+
+export default About;

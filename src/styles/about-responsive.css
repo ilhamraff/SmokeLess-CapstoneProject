@@ -24,10 +24,11 @@
 
 @media screen and (max-width: 768px) {
     .about-us .gambar img {
+        margin-top: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 250px;
+        width: 300px;
         margin: 25px;
     }
 
@@ -84,7 +85,6 @@
     .about-dev p {
         font-size: 15px;
         text-align: justify;
-        padding: 20px;
-    }
+        padding: 20px;
 }
-
+}
