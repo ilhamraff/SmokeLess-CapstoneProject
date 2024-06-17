@@ -203,6 +203,10 @@
     font-size: 27px;
   }
 
+  .content-description {
+    margin-left: 0;
+  }
+
   .content-description p {
     font-size: 12.5px;
     text-align: center;
