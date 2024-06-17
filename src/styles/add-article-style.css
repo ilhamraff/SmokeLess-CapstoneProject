@@ -63,9 +63,24 @@
   color: #aaa;
 }
 
-textarea {
+.form-component textarea {
   resize: vertical;
   height: 500px;
+}
+
+.form-component input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #008080;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+.form-component input[type=file]::file-selector-button:hover {
+  background: #006666;
 }
 
 .form-button {

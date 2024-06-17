@@ -63,12 +63,20 @@ const formHandler = {
           });
         }
 
-        const { ref, getDownloadURL, uploadBytes } = await import('firebase/storage');
-
         const thumbnailFile = articleThumbnail.files[0];
+
+        const maxFileSize = 300 * 1024;
+        if (thumbnailFile.size > maxFileSize) {
+          return Swal.fire({
+            icon: 'error',
+            title: 'Ukuran File Terlalu Besar',
+            text: 'Ukuran gambar harus kurang dari 300KB',
+          });
+        }
+
+        const { ref, getDownloadURL, uploadBytes } = await import('firebase/storage');
         const fileRef = ref(storage, `thumbnails/${thumbnailFile.name}`);
 
-        // Mengunggah gambar ke Firebase Storage
         await uploadBytes(fileRef, thumbnailFile);
         const thumbnailUrl = await getDownloadURL(fileRef);
 
@@ -139,6 +147,7 @@ const formHandler = {
     clearForm.addEventListener('click', () => {
       document.getElementById('author').value = '';
       document.getElementById('title').value = '';
+      document.getElementById('thumbnail').value = '';
       bodyEditor.setData('');
     });
   },
