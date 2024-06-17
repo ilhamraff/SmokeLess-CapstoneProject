@@ -70,7 +70,7 @@ const About = {
                 </div>
                 <div class="card-dev">
                     <div class="dev-picture">
-                        <img class="lazyload" src="images/potoIlham.png" alt="Foto Ilham Rafi Fadhilah" />
+                        <img class="lazyload" src="images/potoIlham.jpg" alt="Foto Ilham Rafi Fadhilah" />
                     </div>
                     <h3 class="dev-title">Ilham Rafi Fadhilah</h3>
                     <div class="icon-picture">

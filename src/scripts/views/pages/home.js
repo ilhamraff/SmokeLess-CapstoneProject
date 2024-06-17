@@ -28,7 +28,11 @@ const Home = {
             </a>
           </div>
           <div class="content-image">
-            <img src="./images/home.png" alt="Logo" />
+            <picture>
+              <source type="image/webp" srcset="./images/home.webp">
+              <source type="image/jpeg" srcset="./images/home.jpg">
+              <img src="./images/home.png" alt="Logo" />
+            </picture>
           </div>
         </article>
     </section>
@@ -38,7 +42,11 @@ const Home = {
           <h1>Apa saja sih Kandungan Rokok itu ?</h1>
           <div class="content-box">
             <div>
-              <img src="images/content-side.png" alt="" />
+              <picture>
+                <source type="image/webp" srcset="./images/content-side.webp">
+                <source type="image/jpeg" srcset="./images/content-side.jpg">
+                <img src="images/content-side.png" alt="">
+              </picture>
             </div>
             <div class="card-container"></div>
           </div>

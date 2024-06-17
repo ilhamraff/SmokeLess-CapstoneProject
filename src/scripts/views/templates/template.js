@@ -3,7 +3,11 @@ const createArticleCard = (article, id) => {
     ? `${article.content.substring(0, 70)} ...`
     : article.content;
   return `
-    <img class="lazyload" src="${article.thumbnail}" alt="${article.title}" />
+    <picture>
+      <source type="image/webp" srcset="${article.thumbnail}.webp">
+      <source type="image/jpeg" srcset="${article.thumbnail}.png">
+      <img class="lazyload" src="${article.thumbnail}" alt="${article.title}" />
+    </picture>
     <div class="item-description">
       <h2>${article.title}</h2>
       <p>${truncatedContent}</p>
@@ -35,7 +39,11 @@ const createCommentSection = () => `
   <article class="comments-container">
     <h1>Post A Comment</h1>
     <div class="commentbox">
-      <img class="lazyload" src="/images/user.png" alt="" />
+      <picture>
+        <source type="image/webp" srcset="/images/user.webp">
+        <source type="image/png" srcset="/images/user.png">
+        <img class="lazyload" src="/images/user.png" alt="user" />
+      </picture>
       <div class="form-content">
         <h2>Comment As:</h2>
         <form action="" class="comment-form" id="comment-form">
@@ -56,14 +64,22 @@ const createCommentSection = () => `
       </div>
     </div>
     <div class="comment-list">
-      <img class="lazyload" src="/images/user.png" alt="" />
+      <picture>
+        <source type="image/webp" srcset="/images/user.webp">
+        <source type="image/png" srcset="/images/user.png">
+        <img class="lazyload" src="/images/user.png" alt="user" />
+      </picture>
       <div class="comments-detail" id="comment-list"></div>
     </div>
   </article>`;
 
 const crateCigaretteContentCard = (content) => `
     <div class="card">
-      <img class="lazyload" src="${content.img}" alt="Avatar" style="width: 100%" />
+      <picture>
+        <source type="image/webp" srcset="${content.img}.webp">
+        <source type="image/png" srcset="${content.img}.png">
+        <img class="lazyload" src="${content.img}" alt="${content.title}" />
+      </picture>
       <div class="container">
         <h3>${content.name}</h3>
       </div>
@@ -83,7 +99,11 @@ const createDiseaseContainer = (disease) => `
 const createBenefitsCard = (benefit) => `
   <div class="card-benefit">
     <div class="user-picture">
-      <img class="lazyload" src="${benefit.img}" alt="" />
+      <picture>
+        <source type="image/webp" srcset="${benefit.img}.webp">
+        <source type="image/png" srcset="${benefit.img}.png">
+        <img class="lazyload" src="${benefit.img}.webp" alt="Avatar" style="width: 100%" />
+      </picture>
     </div>
     <h3 class="benefits-title">${benefit.title}</h3>
   </div>`;
@@ -127,7 +147,11 @@ const createFormArticle = () => `
 
 const createDetailArticleSection = (article) => `
   <div class="article-detail">
-    <img src="${article.thumbnail}" alt="${article.title}" />
+    <picture>
+        <source type="image/webp" srcset="${article.thumbnail}.webp">
+        <source type="image/jpg" srcset="${article.thumbnail}.jpg">
+        <img src="${article.thumbnail}" alt="${article.title}" />
+    </picture>
     <h2 class="article-title">${article.title || 'Title not available'}</h2>
     <div class="article-author">by ${
   article.author || 'Author not available'

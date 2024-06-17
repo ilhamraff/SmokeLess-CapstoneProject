@@ -4,6 +4,7 @@ import '../styles/responsive.css';
 import '../styles/home-style.css';
 import '../styles/home-responsive.css';
 import '../styles/article-style.css';
+import '../styles/article-responsive.css';
 import '../styles/add-article-style.css';
 import '../styles/about-style.css';
 import '../styles/about-responsive.css';
@@ -15,8 +16,6 @@ import '../styles/survey-responsive.css';
 import 'animate.css';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import firebase from 'firebase/app';
-import 'firebase/storage';
 
 import App from './views/app';
 import swRegister from './utils/sw-register';

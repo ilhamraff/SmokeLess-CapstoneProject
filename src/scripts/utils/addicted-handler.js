@@ -1,5 +1,3 @@
-import swal from 'sweetalert';
-
 /**
  * TesHandler adalah objek yang bertanggung jawab untuk menghitung tingkat
  * kecanduan berdasarkan jawaban dari sebuah tes.
@@ -10,10 +8,12 @@ const TesHandler = {
    * Jika semua pertanyaan belum dijawab, menampilkan pesan peringatan menggunakan SweetAlert.
    * Jika semua pertanyaan telah dijawab, menghitung skor kecanduan dan menampilkan hasil.
    */
-  hitungKecanduan() {
+  async hitungKecanduan() {
     const questions = ['age', 'gender', 'education', 'occupation', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
     let allAnswered = true;
     let firstUnanswered = null;
+
+    const { default: swal } = await import('sweetalert');
 
     // Memeriksa apakah semua pertanyaan telah dijawab
     questions.forEach((question) => {

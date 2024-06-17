@@ -2,7 +2,6 @@ import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 import NavbarScroll from '../utils/navbar-handler';
-import PageScroll from '../utils/scroll-handler';
 
 class App {
   constructor({ button, drawer, content }) {

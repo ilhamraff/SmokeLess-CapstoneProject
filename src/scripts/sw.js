@@ -17,6 +17,9 @@ const assetsToCache = [
   './app.bundle.js',
   './app.webmanifest',
   './sw.bundle.js',
+  './benefits.json',
+  './content.json',
+  './disease.json',
 ];
 
 /**

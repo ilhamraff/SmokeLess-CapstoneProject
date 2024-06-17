@@ -1,6 +1,4 @@
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import Swal from 'sweetalert2';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+/* eslint-disable no-shadow */
 import AddArticleHandler from './article-handler';
 import storage from './firebase-config';
 
@@ -16,38 +14,19 @@ const formHandler = {
    */
   async initializeCKEditor(selector) {
     try {
+      const { default: ClassicEditor } = await import('@ckeditor/ckeditor5-build-classic');
       const editor = await ClassicEditor.create(
         document.querySelector(selector),
         {
-          toolbar: [
-            'undo',
-            'redo',
-            'heading',
-            'bold',
-            'italic',
-            'link',
-            'bulletedList',
-            'numberedList',
-            'blockQuote',
-          ],
+          toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
           heading: {
             options: [
+              { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
               {
-                model: 'paragraph',
-                title: 'Paragraph',
-                class: 'ck-heading_paragraph',
+                model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1',
               },
               {
-                model: 'heading1',
-                view: 'h1',
-                title: 'Heading 1',
-                class: 'ck-heading_heading1',
-              },
-              {
-                model: 'heading2',
-                view: 'h2',
-                title: 'Heading 2',
-                class: 'ck-heading_heading2',
+                model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2',
               },
             ],
           },
@@ -75,12 +54,16 @@ const formHandler = {
         const articleBody = bodyEditor.getData();
         const date = new Date().toISOString().split('T')[0];
 
+        const { default: Swal } = await import('sweetalert2');
+
         if (!articleThumbnail.files.length || !articleAuthor || !articleTitle || !articleBody) {
           return Swal.fire({
             icon: 'error',
             title: 'Harap Isi Semua Kolom',
           });
         }
+
+        const { ref, getDownloadURL, uploadBytes } = await import('firebase/storage');
 
         const thumbnailFile = articleThumbnail.files[0];
         const fileRef = ref(storage, `thumbnails/${thumbnailFile.name}`);
