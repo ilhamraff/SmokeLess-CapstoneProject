@@ -1,8 +1,7 @@
-import ArticleSource from '../../data/article-source';
 import CommentSource from '../../data/comment-source';
 import HomeSource from '../../data/home-source';
 import AddComment from '../../utils/comment-handler';
-import PageScroll from '../../utils/scroll-handler';
+import { PageScroll, ScrollToTop } from '../../utils/scroll-handler';
 import {
   crateCigaretteContentCard,
   createBenefitsCard,
@@ -75,7 +74,11 @@ const Home = {
         </article>
     </section>
 
-    <section class="content" id="comment"></section>`;
+    <section class="content" id="comment"></section>
+    
+    <button id="scroll-to-top" class="go-to-top">
+      <i class="fa fa-arrow-up my-go-to-top"></i>
+    </button>`;
   },
 
   async afterRender() {
@@ -116,11 +119,33 @@ const Home = {
         const comentatorComment = document.getElementById('commentatorComment').value;
         const date = new Date().toISOString().split('T')[0];
 
+        const { default: Swal } = await import('sweetalert2');
+
+        if (!comentatorName || !comentatorComment) {
+          return Swal.fire({
+            icon: 'error',
+            title: 'Harap Isi Semua Kolom',
+          });
+        }
+
         const commentData = {
           name: comentatorName,
           comment: comentatorComment,
           date,
         };
+
+        const { isConfirmed } = await Swal.fire({
+          title: 'Konfirmasi',
+          text: 'Buat Komentar',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Ya',
+          cancelButtonText: 'Batal',
+        });
+
+        if (!isConfirmed) {
+          return;
+        }
 
         try {
           const data = await AddComment.addComment(commentData);
@@ -139,6 +164,7 @@ const Home = {
       });
 
       PageScroll.init();
+      ScrollToTop.init();
     } catch (error) {
       console.error('Error rendering: ', error);
     }
