@@ -17,6 +17,6 @@ Website ini juga memberikan referensi bacaan yang rekomendasi dari artikel lainn
 untuk mendukung para pengguna agar mulai berlatih mengurangi kecanduan rokok.
 
 Detail Pengerjaan Project Grup (C624-PS022): 
-1. Branch project-test1 : F1176YB122 - Ilham Rafi Fadhilah
-2. Branch project-test2 : F3816YB057 - Harfin Aqbil Falah
-3. Branch preject-test3 : F3816YB045 - Aldova Ferdiansyah
+1. Branch project-test1 : F1176YB122 - [Ilham Rafi Fadhilah](https://github.com/ilhamraff)
+2. Branch project-test2 : F3816YB057 - [Harfin Aqbil Falah](https://github.com/Harfinnn)
+3. Branch preject-test3 : F3816YB045 - [Aldova Ferdiansyah](https://github.com/aldovaferdiansyah)
