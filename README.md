@@ -20,3 +20,32 @@ Detail Pengerjaan Project Grup (C624-PS022):
 1. Branch project-test1 : F1176YB122 - [Ilham Rafi Fadhilah](https://github.com/ilhamraff)
 2. Branch project-test2 : F3816YB057 - [Harfin Aqbil Falah](https://github.com/Harfinnn)
 3. Branch preject-test3 : F3816YB045 - [Aldova Ferdiansyah](https://github.com/aldovaferdiansyah)
+
+## Dokumen
+- Project Brief
+- [User Guide](https://drive.google.com/file/d/1KwIKwMtYwJoXAnb9wNuYx4GLP2i3yQnz/view?usp=sharing)
+- [Slide Persentasi](https://www.canva.com/design/DAGITTZMM3A/d6CpnAgb2qkkvuaYzqYPzQ/edit)
+- Video Persentasi
+- Video Demo Aplikasi
+
+## Link Deploy
+[Smokeless Web](https://smokeless-web.netlify.app/)
+
+## Sumber Daya Proyek
+- Front-End
+  - HTML, CSS, JavaScript
+- Back-End
+  - Firebase Real-Time Database
+  - Firebase Storage
+- Testing
+  - Postman
+  - Codecepts Playwright
+- Design & UI/UX
+  - Figma
+  - Canva
+- Library Lainnya
+  - Webpack
+  - Eslint
+  - CKEditor4
+  - SweetAlert2
+  - Animate.css
