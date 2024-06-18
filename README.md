@@ -22,11 +22,11 @@ Detail Pengerjaan Project Grup (C624-PS022):
 3. Branch preject-test3 : F3816YB045 - [Aldova Ferdiansyah](https://github.com/aldovaferdiansyah)
 
 ## Dokumen
-- Project Brief
+- [Project Brief](https://drive.google.com/file/d/1tD1EhWELqU6dS6xxmLPsiwln8FubuBu9/view?usp=sharing)
 - [User Guide](https://drive.google.com/file/d/1KwIKwMtYwJoXAnb9wNuYx4GLP2i3yQnz/view?usp=sharing)
 - [Slide Persentasi](https://www.canva.com/design/DAGITTZMM3A/d6CpnAgb2qkkvuaYzqYPzQ/edit)
-- Video Persentasi
-- Video Demo Aplikasi
+- [Video Persentasi](https://www.youtube.com/watch?v=7Xy1Dccp6j4)
+- [Video Demo Aplikasi](https://www.youtube.com/watch?v=7Xy1Dccp6j4)
 
 ## Link Deploy
 [Smokeless Web](https://smokeless-web.netlify.app/)
