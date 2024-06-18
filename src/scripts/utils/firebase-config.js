@@ -4,7 +4,10 @@ import { getStorage } from 'firebase/storage';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+/**
+ * Konfigurasi Firebase untuk aplikasi.
+ * Variabel konfigurasi diambil dari environment variables untuk keamanan.
+ */
 const firebaseConfig = {
   apiKey: process.env.APP_FIREBASE_API_KEY,
   authDomain: 'smokeless-web.firebaseapp.com',
@@ -15,9 +18,17 @@ const firebaseConfig = {
   appId: '1:722584124496:web:0cd63fd82f970714396555',
 };
 
+/**
+ * Menginisialisasi aplikasi Firebase dengan konfigurasi yang diberikan.
+ * @returns {FirebaseApp} Instance dari aplikasi Firebase.
+ */
 const app = initializeApp(firebaseConfig);
 
-// Referensi ke Firebase Storage
+/**
+ * Mendapatkan instance dari Firebase Storage.
+ * @param {FirebaseApp} app - Instance dari aplikasi Firebase.
+ * @returns {FirebaseStorage} Instance dari Firebase Storage.
+ */
 const storage = getStorage(app);
 
 export default storage;

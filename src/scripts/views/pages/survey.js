@@ -1,9 +1,10 @@
 import TesHandler from '../../utils/addicted-handler';
+import { ScrollToTop } from '../../utils/scroll-handler';
 
 const Survey = {
   async render() {
     return `
-      <section class="survey-description">
+      <section id="survey" class="survey-description">
             <div class="content-one">
                 <h1 class="judul1">Ukur Tingkat Kecanduan Anda</h1>
                 <p id="p1">Kami akan  membantu Anda mengukur tingkat kecanduan nikotin Anda. 
@@ -119,7 +120,10 @@ const Survey = {
                 </div>
               </div>
             </article>
-          </section>`;
+          </section>
+          <button id="scroll-to-top" class="go-to-top">
+            <i class="fa fa-arrow-up my-go-to-top"></i>
+          </button>`;
   },
 
   async afterRender() {
@@ -132,6 +136,8 @@ const Survey = {
     hitungButton.addEventListener('click', () => {
       TesHandler.hitungKecanduan();
     });
+
+    ScrollToTop.init();
   },
 };
 
