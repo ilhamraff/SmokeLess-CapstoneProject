@@ -1,6 +1,7 @@
 /* eslint-disable no-inner-declarations */
 /* eslint-disable no-restricted-syntax */
 import ArticleSource from '../../data/article-source';
+import { ScrollToTop } from '../../utils/scroll-handler';
 import { createArticleCard } from '../templates/template';
 
 const Article = {
@@ -23,6 +24,9 @@ const Article = {
         </div> 
         <div class="articles-container" id="articles"></div>
     </section>
+    <button id="scroll-to-top" class="go-to-top">
+      <i class="fa fa-arrow-up my-go-to-top"></i>
+    </button>
 `;
   },
 
@@ -58,6 +62,8 @@ const Article = {
 
         renderArticles(Object.fromEntries(filteredArticles));
       });
+
+      ScrollToTop.init();
     } catch (error) {
       console.error('Error rendering articles:', error);
     }

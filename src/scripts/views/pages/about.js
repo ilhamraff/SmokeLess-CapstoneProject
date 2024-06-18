@@ -1,4 +1,4 @@
-import PageScroll from '../../utils/scroll-handler';
+import { PageScroll } from '../../utils/scroll-handler';
 
 const About = {
   async render() {
